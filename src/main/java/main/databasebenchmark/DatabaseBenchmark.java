@@ -46,15 +46,15 @@ public class DatabaseBenchmark {
         try {
             DataGenerator.createSchema(con, isHsqldb);
 
-            System.out.println("\nSingle INSERT");
+            System.out.println("\n=== Single INSERT ===");
             DataGenerator.truncateAll(con);
             InsertBenchmark.runSingle(db, CUSTOMER_COUNT, PRODUCT_COUNT, log);
 
-            System.out.println("\nBatch INSERT  (batchSize=" + BATCH_SIZE + ")");
+            System.out.println("\n=== Batch INSERT  (batchSize=" + BATCH_SIZE + ") ===");
             DataGenerator.truncateAll(con);
             InsertBenchmark.runBatch(db, CUSTOMER_COUNT, PRODUCT_COUNT, BATCH_SIZE, log);
 
-            System.out.println("\nSELECT with JOINs");
+            System.out.println("\n=== SELECT with JOINs ===");
             SelectBenchmark.runAll(db, log);
 
         } catch (SQLException e) {
