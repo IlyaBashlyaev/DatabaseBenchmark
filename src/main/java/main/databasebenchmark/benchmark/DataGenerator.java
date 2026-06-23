@@ -70,7 +70,7 @@ public class DataGenerator {
         }
     }
 
-    public static void truncateAll(Connection con) throws SQLException {
+    public static void deleteAll(Connection con) throws SQLException {
         boolean prev = con.getAutoCommit();
         con.setAutoCommit(false);
         try (Statement s = con.createStatement()) {
