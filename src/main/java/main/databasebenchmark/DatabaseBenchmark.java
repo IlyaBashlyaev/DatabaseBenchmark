@@ -47,11 +47,11 @@ public class DatabaseBenchmark {
             DataGenerator.createSchema(con, isHsqldb);
 
             System.out.println("\n=== Single INSERT ===");
-            DataGenerator.truncateAll(con);
+            DataGenerator.deleteAll(con);
             InsertBenchmark.runSingle(db, CUSTOMER_COUNT, PRODUCT_COUNT, log);
 
             System.out.println("\n=== Batch INSERT  (batchSize=" + BATCH_SIZE + ") ===");
-            DataGenerator.truncateAll(con);
+            DataGenerator.deleteAll(con);
             InsertBenchmark.runBatch(db, CUSTOMER_COUNT, PRODUCT_COUNT, BATCH_SIZE, log);
 
             System.out.println("\n=== SELECT with JOINs ===");

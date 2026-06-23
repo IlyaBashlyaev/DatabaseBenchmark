@@ -60,7 +60,7 @@ classDiagram
         -String[] PRODUCT_ADJ$
         -String[] PRODUCT_NOUNS$
         +createSchema(Connection con, boolean isHsqldb)$
-        +truncateAll(Connection con)$
+        +deleteAll(Connection con)$
         +firstName()$ String
         +lastName()$ String
         +city()$ String
