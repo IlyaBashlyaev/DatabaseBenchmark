@@ -30,7 +30,7 @@ java -jar hsqldb.jar
 ```
 Type:     HSQL Database Engine In-Memory
 Driver:   org.hsqldb.jdbc.JDBCDriver
-URL:      jdbc:hsqldb:file:./data/mydb
+URL:      jdbc:hsqldb:file:./data/onlineshop
 User:     SA
 Password:
 ```
