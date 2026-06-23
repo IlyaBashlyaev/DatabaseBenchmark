@@ -18,7 +18,7 @@ public class DatabaseBenchmark {
     private static final String CSV_FILE = "benchmark_results.csv";
 
     public static void main(String[] args) throws IOException {
-        Db hsqlDb = buildHsqlDb("./data/benchmark");
+        Db hsqlDb = buildHsqlDb("./data/onlineshop");
         Db pgDb   = buildPostgresDb("localhost", "onlineshop", "postgres", "postgres");
 
         try (CsvLogger log = new CsvLogger(CSV_FILE)) {
