@@ -1,13 +1,14 @@
 package main.databasebenchmark.benchmark;
 
 import java.sql.*;
+
 import main.databasebenchmark.dao.Db;
 import main.databasebenchmark.util.CsvLogger;
 
 public class InsertBenchmark {
 
     private static final int INVOICES_PER_CUSTOMER = 3;
-    private static final int ITEMS_PER_INVOICE     = 5;
+    private static final int ITEMS_PER_INVOICE = 5;
 
     public static void runSingle(Db db, int customerCount, int productCount, CsvLogger log) {
         Connection con = db.getCon();
@@ -37,14 +38,18 @@ public class InsertBenchmark {
             con.setAutoCommit(true);
         } catch (SQLException e) {
             System.err.println("Batch insert error: " + e.getMessage());
-            try { con.rollback(); con.setAutoCommit(true); } catch (SQLException ignored) {}
+            try {
+                con.rollback();
+                con.setAutoCommit(true);
+            } catch (SQLException ignored) {
+            }
         }
     }
-    
+
     // SINGLE INSERT
 
     private static void insertCustomersSingle(Connection con, int count,
-                                               Db db, CsvLogger log) throws SQLException {
+                                              Db db, CsvLogger log) throws SQLException {
         String sql = "INSERT INTO CUSTOMER (ID, FIRSTNAME, LASTNAME, STREET, CITY) VALUES (?,?,?,?,?)";
         try (PreparedStatement ps = con.prepareStatement(sql)) {
             long t1 = System.nanoTime();
@@ -61,7 +66,7 @@ public class InsertBenchmark {
     }
 
     private static void insertProductsSingle(Connection con, int count,
-                                              Db db, CsvLogger log) throws SQLException {
+                                             Db db, CsvLogger log) throws SQLException {
         String sql = "INSERT INTO PRODUCT (ID, NAME, PRICE) VALUES (?,?,?)";
         try (PreparedStatement ps = con.prepareStatement(sql)) {
             long t1 = System.nanoTime();
@@ -76,7 +81,7 @@ public class InsertBenchmark {
     }
 
     private static void insertInvoicesSingle(Connection con, int invoiceCount, int customerCount,
-                                              Db db, CsvLogger log) throws SQLException {
+                                             Db db, CsvLogger log) throws SQLException {
         String sql = "INSERT INTO INVOICE (ID, CUSTOMERID, TOTAL) VALUES (?,?,?)";
         try (PreparedStatement ps = con.prepareStatement(sql)) {
             long t1 = System.nanoTime();
@@ -91,7 +96,7 @@ public class InsertBenchmark {
     }
 
     private static void insertItemsSingle(Connection con, int invoiceCount, int productCount,
-                                           Db db, CsvLogger log) throws SQLException {
+                                          Db db, CsvLogger log) throws SQLException {
         String sql = "INSERT INTO ITEM (INVOICEID, ITEM, PRODUCTID, QUANTITY, COST) VALUES (?,?,?,?,?)";
         int totalItems = invoiceCount * ITEMS_PER_INVOICE;
         try (PreparedStatement ps = con.prepareStatement(sql)) {
@@ -113,7 +118,7 @@ public class InsertBenchmark {
     // BATCH INSERT
 
     private static void insertCustomersBatch(Connection con, int count, int batchSize,
-                                              Db db, CsvLogger log) throws SQLException {
+                                             Db db, CsvLogger log) throws SQLException {
         String sql = "INSERT INTO CUSTOMER (ID, FIRSTNAME, LASTNAME, STREET, CITY) VALUES (?,?,?,?,?)";
         try (PreparedStatement ps = con.prepareStatement(sql)) {
             long t1 = System.nanoTime();
@@ -124,15 +129,21 @@ public class InsertBenchmark {
                 ps.setString(4, DataGenerator.street());
                 ps.setString(5, DataGenerator.city());
                 ps.addBatch();
-                if ((i + 1) % batchSize == 0) { ps.executeBatch(); con.commit(); }
+                if ((i + 1) % batchSize == 0) {
+                    ps.executeBatch();
+                    con.commit();
+                }
             }
-            ps.executeBatch(); con.commit();
+            if (count % batchSize != 0) {
+                ps.executeBatch();
+                con.commit();
+            }
             log.log(db.driver, db.url, t1, System.nanoTime(), "INSERT_BATCH_CUSTOMER", count, batchSize);
         }
     }
 
     private static void insertProductsBatch(Connection con, int count, int batchSize,
-                                             Db db, CsvLogger log) throws SQLException {
+                                            Db db, CsvLogger log) throws SQLException {
         String sql = "INSERT INTO PRODUCT (ID, NAME, PRICE) VALUES (?,?,?)";
         try (PreparedStatement ps = con.prepareStatement(sql)) {
             long t1 = System.nanoTime();
@@ -141,15 +152,21 @@ public class InsertBenchmark {
                 ps.setString(2, DataGenerator.productName());
                 ps.setDouble(3, DataGenerator.price());
                 ps.addBatch();
-                if ((i + 1) % batchSize == 0) { ps.executeBatch(); con.commit(); }
+                if ((i + 1) % batchSize == 0) {
+                    ps.executeBatch();
+                    con.commit();
+                }
             }
-            ps.executeBatch(); con.commit();
+            if (count % batchSize != 0) {
+                ps.executeBatch();
+                con.commit();
+            }
             log.log(db.driver, db.url, t1, System.nanoTime(), "INSERT_BATCH_PRODUCT", count, batchSize);
         }
     }
 
     private static void insertInvoicesBatch(Connection con, int invoiceCount, int customerCount,
-                                             int batchSize, Db db, CsvLogger log) throws SQLException {
+                                            int batchSize, Db db, CsvLogger log) throws SQLException {
         String sql = "INSERT INTO INVOICE (ID, CUSTOMERID, TOTAL) VALUES (?,?,?)";
         try (PreparedStatement ps = con.prepareStatement(sql)) {
             long t1 = System.nanoTime();
@@ -158,15 +175,22 @@ public class InsertBenchmark {
                 ps.setInt(2, i % customerCount);
                 ps.setDouble(3, DataGenerator.price() * 10);
                 ps.addBatch();
-                if ((i + 1) % batchSize == 0) { ps.executeBatch(); con.commit(); }
+                if ((i + 1) % batchSize == 0) {
+                    ps.executeBatch();
+                    con.commit();
+                }
             }
-            ps.executeBatch(); con.commit();
+
+            if (invoiceCount % batchSize != 0) {
+                ps.executeBatch();
+                con.commit();
+            }
             log.log(db.driver, db.url, t1, System.nanoTime(), "INSERT_BATCH_INVOICE", invoiceCount, batchSize);
         }
     }
 
     private static void insertItemsBatch(Connection con, int invoiceCount, int productCount,
-                                          int batchSize, Db db, CsvLogger log) throws SQLException {
+                                         int batchSize, Db db, CsvLogger log) throws SQLException {
         String sql = "INSERT INTO ITEM (INVOICEID, ITEM, PRODUCTID, QUANTITY, COST) VALUES (?,?,?,?,?)";
         int totalItems = invoiceCount * ITEMS_PER_INVOICE;
         try (PreparedStatement ps = con.prepareStatement(sql)) {
@@ -180,10 +204,16 @@ public class InsertBenchmark {
                     ps.setInt(4, DataGenerator.quantity());
                     ps.setDouble(5, DataGenerator.cost());
                     ps.addBatch();
-                    if (++n % batchSize == 0) { ps.executeBatch(); con.commit(); }
+                    if (++n % batchSize == 0) {
+                        ps.executeBatch();
+                        con.commit();
+                    }
                 }
             }
-            ps.executeBatch(); con.commit();
+            if (n % batchSize != 0) {
+                ps.executeBatch();
+                con.commit();
+            }
             log.log(db.driver, db.url, t1, System.nanoTime(), "INSERT_BATCH_ITEM", totalItems, batchSize);
         }
     }
