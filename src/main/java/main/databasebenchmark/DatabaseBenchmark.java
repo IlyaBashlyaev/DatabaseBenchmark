@@ -7,6 +7,7 @@ import main.databasebenchmark.benchmark.InsertBenchmark;
 import main.databasebenchmark.benchmark.SelectBenchmark;
 import main.databasebenchmark.dao.Db;
 import main.databasebenchmark.util.CsvLogger;
+import main.databasebenchmark.util.Logger;
 
 public class DatabaseBenchmark {
 
@@ -15,18 +16,21 @@ public class DatabaseBenchmark {
     private static final int PRODUCT_COUNT  = 10_000;
     private static final int BATCH_SIZE     = 500;
 
-    private static final String CSV_FILE = "benchmark_results.csv";
+    private static final String CSV_FILE = "log/benchmark_results.csv";
+    private static final String LOG_FILE = "log/output.log";
 
     public static void main(String[] args) throws IOException {
         Db hsqlDb = buildHsqlDb("./data/onlineshop");
         Db pgDb   = buildPostgresDb("localhost", "onlineshop", "postgres", "postgres");
 
-        try (CsvLogger log = new CsvLogger(CSV_FILE)) {
-            runBenchmark(hsqlDb, log);
-            runBenchmark(pgDb,   log);
+        try (Logger _ = new Logger(LOG_FILE);
+             CsvLogger csv_log = new CsvLogger(CSV_FILE)) {
+            runBenchmark(hsqlDb, csv_log);
+            runBenchmark(pgDb, csv_log);
         }
 
-        System.out.println("\nResults written to " + CSV_FILE);
+        System.out.println("Results written to " + CSV_FILE);
+        System.out.println("Output log written to " + LOG_FILE);
     }
 
     private static void runBenchmark(Db db, CsvLogger log) {

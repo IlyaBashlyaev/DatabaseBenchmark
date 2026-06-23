@@ -11,10 +11,15 @@ public class CsvLogger implements AutoCloseable {
     private final BufferedWriter writer;
 
     public CsvLogger(String filename) throws IOException {
-        writer = new BufferedWriter(new FileWriter(filename, false));
-        writer.write(HEADER);
-        writer.newLine();
-        writer.flush();
+        File file = new File(filename);
+        file.getParentFile().mkdirs();
+        boolean writeHeader = !file.exists() || file.length() == 0;
+        writer = new BufferedWriter(new FileWriter(file, true));
+        if (writeHeader) {
+            writer.write(HEADER);
+            writer.newLine();
+            writer.flush();
+        }
     }
 
     public void log(String driver, String url, long t1Ns, long t2Ns,
