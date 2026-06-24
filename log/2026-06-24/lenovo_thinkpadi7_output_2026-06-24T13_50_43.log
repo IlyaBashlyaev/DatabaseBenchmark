@@ -1,0 +1,505 @@
+Device name	LENOVO-422
+Full device name	LENOVO-422.ad.softlution.com
+Processor	12th Gen Intel(R) Core(TM) i7-12800HX (2.00 GHz)
+Installed RAM	32,0 GB (31,7 GB usable)
+Device ID	A90FB6EB-94D6-46AD-91E5-6ECD8DC0E121
+Product ID	00355-63273-01782-AAOEM
+System type	64-bit operating system, x64-based processor
+Pen and touch	No pen or touch input is available for this display
+
+
+2026-06-24T13:50:43 === Run started: 2026-06-24T13:50:43 ===
+2026-06-24T13:50:47 
+2026-06-24T13:50:47  DB : jdbc:hsqldb:file:./data/onlineshop
+2026-06-24T13:50:47 
+2026-06-24T13:50:47 === SINGLE INSERT  (10 runs, customers=10000, products=10000) ===
+2026-06-24T13:50:47 
+2026-06-24T13:50:47   Run 1/10
+2026-06-24T13:50:47     [LOG] INSERT_SINGLE_CUSTOMER                        rows=   10000  batch=    1      55 ms        181818 rows/s
+2026-06-24T13:50:47     [LOG] INSERT_SINGLE_PRODUCT                         rows=   10000  batch=    1      42 ms        238095 rows/s
+2026-06-24T13:50:47     [LOG] INSERT_SINGLE_INVOICE                         rows=   10000  batch=    1      72 ms        138889 rows/s
+2026-06-24T13:50:47     [LOG] INSERT_SINGLE_ITEM                            rows=   10000  batch=    1      90 ms        111111 rows/s
+2026-06-24T13:50:47 
+2026-06-24T13:50:47   Run 2/10
+2026-06-24T13:50:47     [LOG] INSERT_SINGLE_CUSTOMER                        rows=   10000  batch=    1      28 ms        357143 rows/s
+2026-06-24T13:50:47     [LOG] INSERT_SINGLE_PRODUCT                         rows=   10000  batch=    1      24 ms        416667 rows/s
+2026-06-24T13:50:48     [LOG] INSERT_SINGLE_INVOICE                         rows=   10000  batch=    1      52 ms        192308 rows/s
+2026-06-24T13:50:48     [LOG] INSERT_SINGLE_ITEM                            rows=   10000  batch=    1      79 ms        126582 rows/s
+2026-06-24T13:50:48 
+2026-06-24T13:50:48   Run 3/10
+2026-06-24T13:50:48     [LOG] INSERT_SINGLE_CUSTOMER                        rows=   10000  batch=    1      27 ms        370370 rows/s
+2026-06-24T13:50:48     [LOG] INSERT_SINGLE_PRODUCT                         rows=   10000  batch=    1      26 ms        384615 rows/s
+2026-06-24T13:50:48     [LOG] INSERT_SINGLE_INVOICE                         rows=   10000  batch=    1      52 ms        192308 rows/s
+2026-06-24T13:50:48     [LOG] INSERT_SINGLE_ITEM                            rows=   10000  batch=    1      90 ms        111111 rows/s
+2026-06-24T13:50:48 
+2026-06-24T13:50:48   Run 4/10
+2026-06-24T13:50:48     [LOG] INSERT_SINGLE_CUSTOMER                        rows=   10000  batch=    1      27 ms        370370 rows/s
+2026-06-24T13:50:48     [LOG] INSERT_SINGLE_PRODUCT                         rows=   10000  batch=    1      25 ms        400000 rows/s
+2026-06-24T13:50:48     [LOG] INSERT_SINGLE_INVOICE                         rows=   10000  batch=    1      51 ms        196078 rows/s
+2026-06-24T13:50:48     [LOG] INSERT_SINGLE_ITEM                            rows=   10000  batch=    1      81 ms        123457 rows/s
+2026-06-24T13:50:48 
+2026-06-24T13:50:48   Run 5/10
+2026-06-24T13:50:48     [LOG] INSERT_SINGLE_CUSTOMER                        rows=   10000  batch=    1      26 ms        384615 rows/s
+2026-06-24T13:50:48     [LOG] INSERT_SINGLE_PRODUCT                         rows=   10000  batch=    1      24 ms        416667 rows/s
+2026-06-24T13:50:48     [LOG] INSERT_SINGLE_INVOICE                         rows=   10000  batch=    1      51 ms        196078 rows/s
+2026-06-24T13:50:48     [LOG] INSERT_SINGLE_ITEM                            rows=   10000  batch=    1      88 ms        113636 rows/s
+2026-06-24T13:50:48 
+2026-06-24T13:50:48   Run 6/10
+2026-06-24T13:50:49     [LOG] INSERT_SINGLE_CUSTOMER                        rows=   10000  batch=    1      27 ms        370370 rows/s
+2026-06-24T13:50:49     [LOG] INSERT_SINGLE_PRODUCT                         rows=   10000  batch=    1      26 ms        384615 rows/s
+2026-06-24T13:50:49     [LOG] INSERT_SINGLE_INVOICE                         rows=   10000  batch=    1      53 ms        188679 rows/s
+2026-06-24T13:50:49     [LOG] INSERT_SINGLE_ITEM                            rows=   10000  batch=    1      82 ms        121951 rows/s
+2026-06-24T13:50:49 
+2026-06-24T13:50:49   Run 7/10
+2026-06-24T13:50:49     [LOG] INSERT_SINGLE_CUSTOMER                        rows=   10000  batch=    1      26 ms        384615 rows/s
+2026-06-24T13:50:49     [LOG] INSERT_SINGLE_PRODUCT                         rows=   10000  batch=    1      24 ms        416667 rows/s
+2026-06-24T13:50:49     [LOG] INSERT_SINGLE_INVOICE                         rows=   10000  batch=    1      60 ms        166667 rows/s
+2026-06-24T13:50:49     [LOG] INSERT_SINGLE_ITEM                            rows=   10000  batch=    1      80 ms        125000 rows/s
+2026-06-24T13:50:49 
+2026-06-24T13:50:49   Run 8/10
+2026-06-24T13:50:49     [LOG] INSERT_SINGLE_CUSTOMER                        rows=   10000  batch=    1      26 ms        384615 rows/s
+2026-06-24T13:50:49     [LOG] INSERT_SINGLE_PRODUCT                         rows=   10000  batch=    1      24 ms        416667 rows/s
+2026-06-24T13:50:49     [LOG] INSERT_SINGLE_INVOICE                         rows=   10000  batch=    1      56 ms        178571 rows/s
+2026-06-24T13:50:49     [LOG] INSERT_SINGLE_ITEM                            rows=   10000  batch=    1      80 ms        125000 rows/s
+2026-06-24T13:50:49 
+2026-06-24T13:50:49   Run 9/10
+2026-06-24T13:50:49     [LOG] INSERT_SINGLE_CUSTOMER                        rows=   10000  batch=    1      32 ms        312500 rows/s
+2026-06-24T13:50:49     [LOG] INSERT_SINGLE_PRODUCT                         rows=   10000  batch=    1      26 ms        384615 rows/s
+2026-06-24T13:50:49     [LOG] INSERT_SINGLE_INVOICE                         rows=   10000  batch=    1      51 ms        196078 rows/s
+2026-06-24T13:50:50     [LOG] INSERT_SINGLE_ITEM                            rows=   10000  batch=    1      80 ms        125000 rows/s
+2026-06-24T13:50:50 
+2026-06-24T13:50:50   Run 10/10
+2026-06-24T13:50:50     [LOG] INSERT_SINGLE_CUSTOMER                        rows=   10000  batch=    1      26 ms        384615 rows/s
+2026-06-24T13:50:50     [LOG] INSERT_SINGLE_PRODUCT                         rows=   10000  batch=    1      24 ms        416667 rows/s
+2026-06-24T13:50:50     [LOG] INSERT_SINGLE_INVOICE                         rows=   10000  batch=    1      51 ms        196078 rows/s
+2026-06-24T13:50:50     [LOG] INSERT_SINGLE_ITEM                            rows=   10000  batch=    1      82 ms        121951 rows/s
+2026-06-24T13:50:50   ────────────────────────────────────────────────────────────────────────
+2026-06-24T13:50:50   Individual durations [ms]: 259, 183, 195, 184, 189, 188, 190, 186, 189, 183
+2026-06-24T13:50:50   avg = 194,6 ms  |  stddev = 21,7 ms  |  min = 183 ms  |  max = 259 ms
+2026-06-24T13:50:50   ────────────────────────────────────────────────────────────────────────
+2026-06-24T13:50:50 
+2026-06-24T13:50:50 === BATCH INSERT  (10 runs, batchSize=1000) ===
+2026-06-24T13:50:50 
+2026-06-24T13:50:50   Run 1/10
+2026-06-24T13:50:50     [LOG] INSERT_BATCH_CUSTOMER                         rows=   10000  batch= 1000      26 ms        384615 rows/s
+2026-06-24T13:50:50     [LOG] INSERT_BATCH_PRODUCT                          rows=   10000  batch= 1000      24 ms        416667 rows/s
+2026-06-24T13:50:50     [LOG] INSERT_BATCH_INVOICE                          rows=   10000  batch= 1000      52 ms        192308 rows/s
+2026-06-24T13:50:50     [LOG] INSERT_BATCH_ITEM                             rows=   10000  batch= 1000      80 ms        125000 rows/s
+2026-06-24T13:50:50 
+2026-06-24T13:50:50   Run 2/10
+2026-06-24T13:50:50     [LOG] INSERT_BATCH_CUSTOMER                         rows=   10000  batch= 1000      27 ms        370370 rows/s
+2026-06-24T13:50:50     [LOG] INSERT_BATCH_PRODUCT                          rows=   10000  batch= 1000      24 ms        416667 rows/s
+2026-06-24T13:50:50     [LOG] INSERT_BATCH_INVOICE                          rows=   10000  batch= 1000      48 ms        208333 rows/s
+2026-06-24T13:50:50     [LOG] INSERT_BATCH_ITEM                             rows=   10000  batch= 1000      84 ms        119048 rows/s
+2026-06-24T13:50:50 
+2026-06-24T13:50:50   Run 3/10
+2026-06-24T13:50:50     [LOG] INSERT_BATCH_CUSTOMER                         rows=   10000  batch= 1000      25 ms        400000 rows/s
+2026-06-24T13:50:51     [LOG] INSERT_BATCH_PRODUCT                          rows=   10000  batch= 1000      23 ms        434783 rows/s
+2026-06-24T13:50:51     [LOG] INSERT_BATCH_INVOICE                          rows=   10000  batch= 1000      50 ms        200000 rows/s
+2026-06-24T13:50:51     [LOG] INSERT_BATCH_ITEM                             rows=   10000  batch= 1000      77 ms        129870 rows/s
+2026-06-24T13:50:51 
+2026-06-24T13:50:51   Run 4/10
+2026-06-24T13:50:51     [LOG] INSERT_BATCH_CUSTOMER                         rows=   10000  batch= 1000      50 ms        200000 rows/s
+2026-06-24T13:50:51     [LOG] INSERT_BATCH_PRODUCT                          rows=   10000  batch= 1000      27 ms        370370 rows/s
+2026-06-24T13:50:51     [LOG] INSERT_BATCH_INVOICE                          rows=   10000  batch= 1000      50 ms        200000 rows/s
+2026-06-24T13:50:51     [LOG] INSERT_BATCH_ITEM                             rows=   10000  batch= 1000      78 ms        128205 rows/s
+2026-06-24T13:50:51 
+2026-06-24T13:50:51   Run 5/10
+2026-06-24T13:50:51     [LOG] INSERT_BATCH_CUSTOMER                         rows=   10000  batch= 1000      26 ms        384615 rows/s
+2026-06-24T13:50:51     [LOG] INSERT_BATCH_PRODUCT                          rows=   10000  batch= 1000      25 ms        400000 rows/s
+2026-06-24T13:50:51     [LOG] INSERT_BATCH_INVOICE                          rows=   10000  batch= 1000      48 ms        208333 rows/s
+2026-06-24T13:50:51     [LOG] INSERT_BATCH_ITEM                             rows=   10000  batch= 1000      79 ms        126582 rows/s
+2026-06-24T13:50:51 
+2026-06-24T13:50:51   Run 6/10
+2026-06-24T13:50:51     [LOG] INSERT_BATCH_CUSTOMER                         rows=   10000  batch= 1000      25 ms        400000 rows/s
+2026-06-24T13:50:51     [LOG] INSERT_BATCH_PRODUCT                          rows=   10000  batch= 1000      23 ms        434783 rows/s
+2026-06-24T13:50:51     [LOG] INSERT_BATCH_INVOICE                          rows=   10000  batch= 1000      49 ms        204082 rows/s
+2026-06-24T13:50:51     [LOG] INSERT_BATCH_ITEM                             rows=   10000  batch= 1000      80 ms        125000 rows/s
+2026-06-24T13:50:51 
+2026-06-24T13:50:51   Run 7/10
+2026-06-24T13:50:52     [LOG] INSERT_BATCH_CUSTOMER                         rows=   10000  batch= 1000      25 ms        400000 rows/s
+2026-06-24T13:50:52     [LOG] INSERT_BATCH_PRODUCT                          rows=   10000  batch= 1000      23 ms        434783 rows/s
+2026-06-24T13:50:52     [LOG] INSERT_BATCH_INVOICE                          rows=   10000  batch= 1000      49 ms        204082 rows/s
+2026-06-24T13:50:52     [LOG] INSERT_BATCH_ITEM                             rows=   10000  batch= 1000      77 ms        129870 rows/s
+2026-06-24T13:50:52 
+2026-06-24T13:50:52   Run 8/10
+2026-06-24T13:50:52     [LOG] INSERT_BATCH_CUSTOMER                         rows=   10000  batch= 1000      24 ms        416667 rows/s
+2026-06-24T13:50:52     [LOG] INSERT_BATCH_PRODUCT                          rows=   10000  batch= 1000      23 ms        434783 rows/s
+2026-06-24T13:50:52     [LOG] INSERT_BATCH_INVOICE                          rows=   10000  batch= 1000      49 ms        204082 rows/s
+2026-06-24T13:50:52     [LOG] INSERT_BATCH_ITEM                             rows=   10000  batch= 1000      80 ms        125000 rows/s
+2026-06-24T13:50:52 
+2026-06-24T13:50:52   Run 9/10
+2026-06-24T13:50:52     [LOG] INSERT_BATCH_CUSTOMER                         rows=   10000  batch= 1000      24 ms        416667 rows/s
+2026-06-24T13:50:52     [LOG] INSERT_BATCH_PRODUCT                          rows=   10000  batch= 1000      28 ms        357143 rows/s
+2026-06-24T13:50:52     [LOG] INSERT_BATCH_INVOICE                          rows=   10000  batch= 1000      49 ms        204082 rows/s
+2026-06-24T13:50:52     [LOG] INSERT_BATCH_ITEM                             rows=   10000  batch= 1000      87 ms        114943 rows/s
+2026-06-24T13:50:52 
+2026-06-24T13:50:52   Run 10/10
+2026-06-24T13:50:52     [LOG] INSERT_BATCH_CUSTOMER                         rows=   10000  batch= 1000      24 ms        416667 rows/s
+2026-06-24T13:50:52     [LOG] INSERT_BATCH_PRODUCT                          rows=   10000  batch= 1000      22 ms        454545 rows/s
+2026-06-24T13:50:52     [LOG] INSERT_BATCH_INVOICE                          rows=   10000  batch= 1000      50 ms        200000 rows/s
+2026-06-24T13:50:53     [LOG] INSERT_BATCH_ITEM                             rows=   10000  batch= 1000      78 ms        128205 rows/s
+2026-06-24T13:50:53   ────────────────────────────────────────────────────────────────────────
+2026-06-24T13:50:53   Individual durations [ms]: 182, 183, 175, 205, 178, 177, 174, 176, 188, 174
+2026-06-24T13:50:53   avg = 181,2 ms  |  stddev = 9,0 ms  |  min = 174 ms  |  max = 205 ms
+2026-06-24T13:50:53   ────────────────────────────────────────────────────────────────────────
+2026-06-24T13:50:53 
+2026-06-24T13:50:53 === SELECT WITH JOINS  (10 runs) ===
+2026-06-24T13:50:53 
+2026-06-24T13:50:53   Run 1/10
+2026-06-24T13:50:53     [LOG] SELECT_JOIN_CUSTOMER_INVOICE                  rows=   10000  batch=    0      35 ms        285714 rows/s
+2026-06-24T13:50:53     [LOG] SELECT_JOIN_INVOICE_ITEM_PRODUCT              rows=   10000  batch=    0      39 ms        256410 rows/s
+2026-06-24T13:50:53     [LOG] SELECT_JOIN_ALL_FOUR_TABLES                   rows=   10000  batch=    0      55 ms        181818 rows/s
+2026-06-24T13:50:53 
+2026-06-24T13:50:53   Run 2/10
+2026-06-24T13:50:53     [LOG] SELECT_JOIN_CUSTOMER_INVOICE                  rows=   10000  batch=    0      24 ms        416667 rows/s
+2026-06-24T13:50:53     [LOG] SELECT_JOIN_INVOICE_ITEM_PRODUCT              rows=   10000  batch=    0      34 ms        294118 rows/s
+2026-06-24T13:50:53     [LOG] SELECT_JOIN_ALL_FOUR_TABLES                   rows=   10000  batch=    0      49 ms        204082 rows/s
+2026-06-24T13:50:53 
+2026-06-24T13:50:53   Run 3/10
+2026-06-24T13:50:53     [LOG] SELECT_JOIN_CUSTOMER_INVOICE                  rows=   10000  batch=    0      21 ms        476190 rows/s
+2026-06-24T13:50:53     [LOG] SELECT_JOIN_INVOICE_ITEM_PRODUCT              rows=   10000  batch=    0      32 ms        312500 rows/s
+2026-06-24T13:50:53     [LOG] SELECT_JOIN_ALL_FOUR_TABLES                   rows=   10000  batch=    0      48 ms        208333 rows/s
+2026-06-24T13:50:53 
+2026-06-24T13:50:53   Run 4/10
+2026-06-24T13:50:53     [LOG] SELECT_JOIN_CUSTOMER_INVOICE                  rows=   10000  batch=    0      20 ms        500000 rows/s
+2026-06-24T13:50:53     [LOG] SELECT_JOIN_INVOICE_ITEM_PRODUCT              rows=   10000  batch=    0      33 ms        303030 rows/s
+2026-06-24T13:50:53     [LOG] SELECT_JOIN_ALL_FOUR_TABLES                   rows=   10000  batch=    0      51 ms        196078 rows/s
+2026-06-24T13:50:53 
+2026-06-24T13:50:53   Run 5/10
+2026-06-24T13:50:53     [LOG] SELECT_JOIN_CUSTOMER_INVOICE                  rows=   10000  batch=    0      19 ms        526316 rows/s
+2026-06-24T13:50:53     [LOG] SELECT_JOIN_INVOICE_ITEM_PRODUCT              rows=   10000  batch=    0      29 ms        344828 rows/s
+2026-06-24T13:50:53     [LOG] SELECT_JOIN_ALL_FOUR_TABLES                   rows=   10000  batch=    0      48 ms        208333 rows/s
+2026-06-24T13:50:53 
+2026-06-24T13:50:53   Run 6/10
+2026-06-24T13:50:53     [LOG] SELECT_JOIN_CUSTOMER_INVOICE                  rows=   10000  batch=    0      19 ms        526316 rows/s
+2026-06-24T13:50:53     [LOG] SELECT_JOIN_INVOICE_ITEM_PRODUCT              rows=   10000  batch=    0      30 ms        333333 rows/s
+2026-06-24T13:50:53     [LOG] SELECT_JOIN_ALL_FOUR_TABLES                   rows=   10000  batch=    0      47 ms        212766 rows/s
+2026-06-24T13:50:53 
+2026-06-24T13:50:53   Run 7/10
+2026-06-24T13:50:53     [LOG] SELECT_JOIN_CUSTOMER_INVOICE                  rows=   10000  batch=    0      18 ms        555556 rows/s
+2026-06-24T13:50:53     [LOG] SELECT_JOIN_INVOICE_ITEM_PRODUCT              rows=   10000  batch=    0      30 ms        333333 rows/s
+2026-06-24T13:50:53     [LOG] SELECT_JOIN_ALL_FOUR_TABLES                   rows=   10000  batch=    0      47 ms        212766 rows/s
+2026-06-24T13:50:53 
+2026-06-24T13:50:53   Run 8/10
+2026-06-24T13:50:53     [LOG] SELECT_JOIN_CUSTOMER_INVOICE                  rows=   10000  batch=    0      20 ms        500000 rows/s
+2026-06-24T13:50:53     [LOG] SELECT_JOIN_INVOICE_ITEM_PRODUCT              rows=   10000  batch=    0      30 ms        333333 rows/s
+2026-06-24T13:50:53     [LOG] SELECT_JOIN_ALL_FOUR_TABLES                   rows=   10000  batch=    0      47 ms        212766 rows/s
+2026-06-24T13:50:53 
+2026-06-24T13:50:53   Run 9/10
+2026-06-24T13:50:53     [LOG] SELECT_JOIN_CUSTOMER_INVOICE                  rows=   10000  batch=    0      19 ms        526316 rows/s
+2026-06-24T13:50:53     [LOG] SELECT_JOIN_INVOICE_ITEM_PRODUCT              rows=   10000  batch=    0      30 ms        333333 rows/s
+2026-06-24T13:50:54     [LOG] SELECT_JOIN_ALL_FOUR_TABLES                   rows=   10000  batch=    0      45 ms        222222 rows/s
+2026-06-24T13:50:54 
+2026-06-24T13:50:54   Run 10/10
+2026-06-24T13:50:54     [LOG] SELECT_JOIN_CUSTOMER_INVOICE                  rows=   10000  batch=    0      19 ms        526316 rows/s
+2026-06-24T13:50:54     [LOG] SELECT_JOIN_INVOICE_ITEM_PRODUCT              rows=   10000  batch=    0      33 ms        303030 rows/s
+2026-06-24T13:50:54     [LOG] SELECT_JOIN_ALL_FOUR_TABLES                   rows=   10000  batch=    0      47 ms        212766 rows/s
+2026-06-24T13:50:54   ────────────────────────────────────────────────────────────────────────
+2026-06-24T13:50:54   Individual durations [ms]: 129, 107, 101, 104, 96, 96, 95, 97, 94, 99
+2026-06-24T13:50:54   avg = 101,8 ms  |  stddev = 9,9 ms  |  min = 94 ms  |  max = 129 ms
+2026-06-24T13:50:54   ────────────────────────────────────────────────────────────────────────
+2026-06-24T13:50:54 
+2026-06-24T13:50:54 === SELECT denormalized  (10 runs) ===
+2026-06-24T13:50:54 
+2026-06-24T13:50:54   Run 1/10
+2026-06-24T13:50:54     [LOG] SELECT_DENORM_CUSTOMER_INVOICE                rows=   10000  batch=    0       5 ms       2000000 rows/s
+2026-06-24T13:50:54     [LOG] SELECT_DENORM_INVOICE_ITEM_PRODUCT            rows=   10000  batch=    0       3 ms       3333333 rows/s
+2026-06-24T13:50:54     [LOG] SELECT_DENORM_ALL_COLUMNS                     rows=   10000  batch=    0       4 ms       2500000 rows/s
+2026-06-24T13:50:54 
+2026-06-24T13:50:54   Run 2/10
+2026-06-24T13:50:54     [LOG] SELECT_DENORM_CUSTOMER_INVOICE                rows=   10000  batch=    0       5 ms       2000000 rows/s
+2026-06-24T13:50:54     [LOG] SELECT_DENORM_INVOICE_ITEM_PRODUCT            rows=   10000  batch=    0       2 ms       5000000 rows/s
+2026-06-24T13:50:54     [LOG] SELECT_DENORM_ALL_COLUMNS                     rows=   10000  batch=    0       4 ms       2500000 rows/s
+2026-06-24T13:50:54 
+2026-06-24T13:50:54   Run 3/10
+2026-06-24T13:50:54     [LOG] SELECT_DENORM_CUSTOMER_INVOICE                rows=   10000  batch=    0       8 ms       1250000 rows/s
+2026-06-24T13:50:54     [LOG] SELECT_DENORM_INVOICE_ITEM_PRODUCT            rows=   10000  batch=    0       3 ms       3333333 rows/s
+2026-06-24T13:50:54     [LOG] SELECT_DENORM_ALL_COLUMNS                     rows=   10000  batch=    0       4 ms       2500000 rows/s
+2026-06-24T13:50:54 
+2026-06-24T13:50:54   Run 4/10
+2026-06-24T13:50:54     [LOG] SELECT_DENORM_CUSTOMER_INVOICE                rows=   10000  batch=    0       6 ms       1666667 rows/s
+2026-06-24T13:50:54     [LOG] SELECT_DENORM_INVOICE_ITEM_PRODUCT            rows=   10000  batch=    0       2 ms       5000000 rows/s
+2026-06-24T13:50:54     [LOG] SELECT_DENORM_ALL_COLUMNS                     rows=   10000  batch=    0       4 ms       2500000 rows/s
+2026-06-24T13:50:54 
+2026-06-24T13:50:54   Run 5/10
+2026-06-24T13:50:54     [LOG] SELECT_DENORM_CUSTOMER_INVOICE                rows=   10000  batch=    0       5 ms       2000000 rows/s
+2026-06-24T13:50:54     [LOG] SELECT_DENORM_INVOICE_ITEM_PRODUCT            rows=   10000  batch=    0       3 ms       3333333 rows/s
+2026-06-24T13:50:54     [LOG] SELECT_DENORM_ALL_COLUMNS                     rows=   10000  batch=    0       5 ms       2000000 rows/s
+2026-06-24T13:50:54 
+2026-06-24T13:50:54   Run 6/10
+2026-06-24T13:50:54     [LOG] SELECT_DENORM_CUSTOMER_INVOICE                rows=   10000  batch=    0       5 ms       2000000 rows/s
+2026-06-24T13:50:54     [LOG] SELECT_DENORM_INVOICE_ITEM_PRODUCT            rows=   10000  batch=    0       3 ms       3333333 rows/s
+2026-06-24T13:50:54     [LOG] SELECT_DENORM_ALL_COLUMNS                     rows=   10000  batch=    0       4 ms       2500000 rows/s
+2026-06-24T13:50:54 
+2026-06-24T13:50:54   Run 7/10
+2026-06-24T13:50:54     [LOG] SELECT_DENORM_CUSTOMER_INVOICE                rows=   10000  batch=    0       5 ms       2000000 rows/s
+2026-06-24T13:50:54     [LOG] SELECT_DENORM_INVOICE_ITEM_PRODUCT            rows=   10000  batch=    0       2 ms       5000000 rows/s
+2026-06-24T13:50:54     [LOG] SELECT_DENORM_ALL_COLUMNS                     rows=   10000  batch=    0       4 ms       2500000 rows/s
+2026-06-24T13:50:54 
+2026-06-24T13:50:54   Run 8/10
+2026-06-24T13:50:54     [LOG] SELECT_DENORM_CUSTOMER_INVOICE                rows=   10000  batch=    0       4 ms       2500000 rows/s
+2026-06-24T13:50:54     [LOG] SELECT_DENORM_INVOICE_ITEM_PRODUCT            rows=   10000  batch=    0       2 ms       5000000 rows/s
+2026-06-24T13:50:54     [LOG] SELECT_DENORM_ALL_COLUMNS                     rows=   10000  batch=    0       4 ms       2500000 rows/s
+2026-06-24T13:50:54 
+2026-06-24T13:50:54   Run 9/10
+2026-06-24T13:50:54     [LOG] SELECT_DENORM_CUSTOMER_INVOICE                rows=   10000  batch=    0       5 ms       2000000 rows/s
+2026-06-24T13:50:54     [LOG] SELECT_DENORM_INVOICE_ITEM_PRODUCT            rows=   10000  batch=    0       3 ms       3333333 rows/s
+2026-06-24T13:50:54     [LOG] SELECT_DENORM_ALL_COLUMNS                     rows=   10000  batch=    0       5 ms       2000000 rows/s
+2026-06-24T13:50:54 
+2026-06-24T13:50:54   Run 10/10
+2026-06-24T13:50:54     [LOG] SELECT_DENORM_CUSTOMER_INVOICE                rows=   10000  batch=    0       5 ms       2000000 rows/s
+2026-06-24T13:50:54     [LOG] SELECT_DENORM_INVOICE_ITEM_PRODUCT            rows=   10000  batch=    0       2 ms       5000000 rows/s
+2026-06-24T13:50:54     [LOG] SELECT_DENORM_ALL_COLUMNS                     rows=   10000  batch=    0       4 ms       2500000 rows/s
+2026-06-24T13:50:54   ────────────────────────────────────────────────────────────────────────
+2026-06-24T13:50:54   Individual durations [ms]: 12, 11, 15, 12, 13, 12, 11, 10, 13, 11
+2026-06-24T13:50:54   avg = 12,0 ms  |  stddev = 1,3 ms  |  min = 10 ms  |  max = 15 ms
+2026-06-24T13:50:54   ────────────────────────────────────────────────────────────────────────
+2026-06-24T13:50:54 
+2026-06-24T13:50:54  DB : jdbc:postgresql://localhost/onlineshop
+2026-06-24T13:50:54 
+2026-06-24T13:50:54 === SINGLE INSERT  (10 runs, customers=10000, products=10000) ===
+2026-06-24T13:50:54 
+2026-06-24T13:50:54   Run 1/10
+2026-06-24T13:50:57     [LOG] INSERT_SINGLE_CUSTOMER                        rows=   10000  batch=    1    1150 ms          8696 rows/s
+2026-06-24T13:50:59     [LOG] INSERT_SINGLE_PRODUCT                         rows=   10000  batch=    1    2118 ms          4721 rows/s
+2026-06-24T13:51:02     [LOG] INSERT_SINGLE_INVOICE                         rows=   10000  batch=    1    3192 ms          3133 rows/s
+2026-06-24T13:51:05     [LOG] INSERT_SINGLE_ITEM                            rows=   10000  batch=    1    3267 ms          3061 rows/s
+2026-06-24T13:51:05 
+2026-06-24T13:51:05   Run 2/10
+2026-06-24T13:51:15     [LOG] INSERT_SINGLE_CUSTOMER                        rows=   10000  batch=    1    2176 ms          4596 rows/s
+2026-06-24T13:51:18     [LOG] INSERT_SINGLE_PRODUCT                         rows=   10000  batch=    1    2265 ms          4415 rows/s
+2026-06-24T13:51:20     [LOG] INSERT_SINGLE_INVOICE                         rows=   10000  batch=    1    2463 ms          4060 rows/s
+2026-06-24T13:51:23     [LOG] INSERT_SINGLE_ITEM                            rows=   10000  batch=    1    3157 ms          3168 rows/s
+2026-06-24T13:51:23 
+2026-06-24T13:51:23   Run 3/10
+2026-06-24T13:51:33     [LOG] INSERT_SINGLE_CUSTOMER                        rows=   10000  batch=    1    2486 ms          4023 rows/s
+2026-06-24T13:51:35     [LOG] INSERT_SINGLE_PRODUCT                         rows=   10000  batch=    1    1930 ms          5181 rows/s
+2026-06-24T13:51:38     [LOG] INSERT_SINGLE_INVOICE                         rows=   10000  batch=    1    2857 ms          3500 rows/s
+2026-06-24T13:51:41     [LOG] INSERT_SINGLE_ITEM                            rows=   10000  batch=    1    2913 ms          3433 rows/s
+2026-06-24T13:51:41 
+2026-06-24T13:51:41   Run 4/10
+2026-06-24T13:51:49     [LOG] INSERT_SINGLE_CUSTOMER                        rows=   10000  batch=    1    2113 ms          4733 rows/s
+2026-06-24T13:51:51     [LOG] INSERT_SINGLE_PRODUCT                         rows=   10000  batch=    1    2327 ms          4297 rows/s
+2026-06-24T13:51:54     [LOG] INSERT_SINGLE_INVOICE                         rows=   10000  batch=    1    3041 ms          3288 rows/s
+2026-06-24T13:51:57     [LOG] INSERT_SINGLE_ITEM                            rows=   10000  batch=    1    2785 ms          3591 rows/s
+2026-06-24T13:51:57 
+2026-06-24T13:51:57   Run 5/10
+2026-06-24T13:52:06     [LOG] INSERT_SINGLE_CUSTOMER                        rows=   10000  batch=    1    2058 ms          4859 rows/s
+2026-06-24T13:52:08     [LOG] INSERT_SINGLE_PRODUCT                         rows=   10000  batch=    1    2229 ms          4486 rows/s
+2026-06-24T13:52:10     [LOG] INSERT_SINGLE_INVOICE                         rows=   10000  batch=    1    2586 ms          3867 rows/s
+2026-06-24T13:52:13     [LOG] INSERT_SINGLE_ITEM                            rows=   10000  batch=    1    2800 ms          3571 rows/s
+2026-06-24T13:52:13 
+2026-06-24T13:52:13   Run 6/10
+2026-06-24T13:52:23     [LOG] INSERT_SINGLE_CUSTOMER                        rows=   10000  batch=    1    2127 ms          4701 rows/s
+2026-06-24T13:52:25     [LOG] INSERT_SINGLE_PRODUCT                         rows=   10000  batch=    1    1955 ms          5115 rows/s
+2026-06-24T13:52:27     [LOG] INSERT_SINGLE_INVOICE                         rows=   10000  batch=    1    2837 ms          3525 rows/s
+2026-06-24T13:52:30     [LOG] INSERT_SINGLE_ITEM                            rows=   10000  batch=    1    2831 ms          3532 rows/s
+2026-06-24T13:52:30 
+2026-06-24T13:52:30   Run 7/10
+2026-06-24T13:52:39     [LOG] INSERT_SINGLE_CUSTOMER                        rows=   10000  batch=    1    2024 ms          4941 rows/s
+2026-06-24T13:52:41     [LOG] INSERT_SINGLE_PRODUCT                         rows=   10000  batch=    1    1916 ms          5219 rows/s
+2026-06-24T13:52:44     [LOG] INSERT_SINGLE_INVOICE                         rows=   10000  batch=    1    2735 ms          3656 rows/s
+2026-06-24T13:52:47     [LOG] INSERT_SINGLE_ITEM                            rows=   10000  batch=    1    2835 ms          3527 rows/s
+2026-06-24T13:52:47 
+2026-06-24T13:52:47   Run 8/10
+2026-06-24T13:52:57     [LOG] INSERT_SINGLE_CUSTOMER                        rows=   10000  batch=    1    2437 ms          4103 rows/s
+2026-06-24T13:52:59     [LOG] INSERT_SINGLE_PRODUCT                         rows=   10000  batch=    1    2445 ms          4090 rows/s
+2026-06-24T13:53:01     [LOG] INSERT_SINGLE_INVOICE                         rows=   10000  batch=    1    2476 ms          4039 rows/s
+2026-06-24T13:53:04     [LOG] INSERT_SINGLE_ITEM                            rows=   10000  batch=    1    2956 ms          3383 rows/s
+2026-06-24T13:53:04 
+2026-06-24T13:53:04   Run 9/10
+2026-06-24T13:53:15     [LOG] INSERT_SINGLE_CUSTOMER                        rows=   10000  batch=    1    2375 ms          4211 rows/s
+2026-06-24T13:53:18     [LOG] INSERT_SINGLE_PRODUCT                         rows=   10000  batch=    1    2393 ms          4179 rows/s
+2026-06-24T13:53:20     [LOG] INSERT_SINGLE_INVOICE                         rows=   10000  batch=    1    2722 ms          3674 rows/s
+2026-06-24T13:53:23     [LOG] INSERT_SINGLE_ITEM                            rows=   10000  batch=    1    2951 ms          3389 rows/s
+2026-06-24T13:53:23 
+2026-06-24T13:53:23   Run 10/10
+2026-06-24T13:53:34     [LOG] INSERT_SINGLE_CUSTOMER                        rows=   10000  batch=    1    2049 ms          4880 rows/s
+2026-06-24T13:53:36     [LOG] INSERT_SINGLE_PRODUCT                         rows=   10000  batch=    1    2174 ms          4600 rows/s
+2026-06-24T13:53:39     [LOG] INSERT_SINGLE_INVOICE                         rows=   10000  batch=    1    2915 ms          3431 rows/s
+2026-06-24T13:53:41     [LOG] INSERT_SINGLE_ITEM                            rows=   10000  batch=    1    2730 ms          3663 rows/s
+2026-06-24T13:53:41   ────────────────────────────────────────────────────────────────────────
+2026-06-24T13:53:41   Individual durations [ms]: 9727, 10061, 10186, 10266, 9673, 9750, 9510, 10314, 10441, 9868
+2026-06-24T13:53:41   avg = 9979,6 ms  |  stddev = 299,9 ms  |  min = 9510 ms  |  max = 10441 ms
+2026-06-24T13:53:41   ────────────────────────────────────────────────────────────────────────
+2026-06-24T13:53:41 
+2026-06-24T13:53:41 === BATCH INSERT  (10 runs, batchSize=1000) ===
+2026-06-24T13:53:41 
+2026-06-24T13:53:41   Run 1/10
+2026-06-24T13:53:48     [LOG] INSERT_BATCH_CUSTOMER                         rows=   10000  batch= 1000     116 ms         86207 rows/s
+2026-06-24T13:53:48     [LOG] INSERT_BATCH_PRODUCT                          rows=   10000  batch= 1000     150 ms         66667 rows/s
+2026-06-24T13:53:49     [LOG] INSERT_BATCH_INVOICE                          rows=   10000  batch= 1000     342 ms         29240 rows/s
+2026-06-24T13:53:49     [LOG] INSERT_BATCH_ITEM                             rows=   10000  batch= 1000     457 ms         21882 rows/s
+2026-06-24T13:53:49 
+2026-06-24T13:53:49   Run 2/10
+2026-06-24T13:53:56     [LOG] INSERT_BATCH_CUSTOMER                         rows=   10000  batch= 1000     117 ms         85470 rows/s
+2026-06-24T13:53:56     [LOG] INSERT_BATCH_PRODUCT                          rows=   10000  batch= 1000     102 ms         98039 rows/s
+2026-06-24T13:53:56     [LOG] INSERT_BATCH_INVOICE                          rows=   10000  batch= 1000     253 ms         39526 rows/s
+2026-06-24T13:53:57     [LOG] INSERT_BATCH_ITEM                             rows=   10000  batch= 1000     329 ms         30395 rows/s
+2026-06-24T13:53:57 
+2026-06-24T13:53:57   Run 3/10
+2026-06-24T13:54:04     [LOG] INSERT_BATCH_CUSTOMER                         rows=   10000  batch= 1000     115 ms         86957 rows/s
+2026-06-24T13:54:04     [LOG] INSERT_BATCH_PRODUCT                          rows=   10000  batch= 1000     106 ms         94340 rows/s
+2026-06-24T13:54:05     [LOG] INSERT_BATCH_INVOICE                          rows=   10000  batch= 1000     304 ms         32895 rows/s
+2026-06-24T13:54:05     [LOG] INSERT_BATCH_ITEM                             rows=   10000  batch= 1000     381 ms         26247 rows/s
+2026-06-24T13:54:05 
+2026-06-24T13:54:05   Run 4/10
+2026-06-24T13:54:14     [LOG] INSERT_BATCH_CUSTOMER                         rows=   10000  batch= 1000      99 ms        101010 rows/s
+2026-06-24T13:54:14     [LOG] INSERT_BATCH_PRODUCT                          rows=   10000  batch= 1000     114 ms         87719 rows/s
+2026-06-24T13:54:14     [LOG] INSERT_BATCH_INVOICE                          rows=   10000  batch= 1000     272 ms         36765 rows/s
+2026-06-24T13:54:14     [LOG] INSERT_BATCH_ITEM                             rows=   10000  batch= 1000     360 ms         27778 rows/s
+2026-06-24T13:54:14 
+2026-06-24T13:54:14   Run 5/10
+2026-06-24T13:54:24     [LOG] INSERT_BATCH_CUSTOMER                         rows=   10000  batch= 1000     142 ms         70423 rows/s
+2026-06-24T13:54:24     [LOG] INSERT_BATCH_PRODUCT                          rows=   10000  batch= 1000     137 ms         72993 rows/s
+2026-06-24T13:54:24     [LOG] INSERT_BATCH_INVOICE                          rows=   10000  batch= 1000     306 ms         32680 rows/s
+2026-06-24T13:54:25     [LOG] INSERT_BATCH_ITEM                             rows=   10000  batch= 1000     491 ms         20367 rows/s
+2026-06-24T13:54:25 
+2026-06-24T13:54:25   Run 6/10
+2026-06-24T13:54:35     [LOG] INSERT_BATCH_CUSTOMER                         rows=   10000  batch= 1000     114 ms         87719 rows/s
+2026-06-24T13:54:35     [LOG] INSERT_BATCH_PRODUCT                          rows=   10000  batch= 1000      94 ms        106383 rows/s
+2026-06-24T13:54:35     [LOG] INSERT_BATCH_INVOICE                          rows=   10000  batch= 1000     209 ms         47847 rows/s
+2026-06-24T13:54:35     [LOG] INSERT_BATCH_ITEM                             rows=   10000  batch= 1000     317 ms         31546 rows/s
+2026-06-24T13:54:35 
+2026-06-24T13:54:35   Run 7/10
+2026-06-24T13:54:44     [LOG] INSERT_BATCH_CUSTOMER                         rows=   10000  batch= 1000      80 ms        125000 rows/s
+2026-06-24T13:54:44     [LOG] INSERT_BATCH_PRODUCT                          rows=   10000  batch= 1000     101 ms         99010 rows/s
+2026-06-24T13:54:44     [LOG] INSERT_BATCH_INVOICE                          rows=   10000  batch= 1000     172 ms         58140 rows/s
+2026-06-24T13:54:44     [LOG] INSERT_BATCH_ITEM                             rows=   10000  batch= 1000     327 ms         30581 rows/s
+2026-06-24T13:54:44 
+2026-06-24T13:54:44   Run 8/10
+2026-06-24T13:54:53     [LOG] INSERT_BATCH_CUSTOMER                         rows=   10000  batch= 1000      92 ms        108696 rows/s
+2026-06-24T13:54:53     [LOG] INSERT_BATCH_PRODUCT                          rows=   10000  batch= 1000     102 ms         98039 rows/s
+2026-06-24T13:54:53     [LOG] INSERT_BATCH_INVOICE                          rows=   10000  batch= 1000     186 ms         53763 rows/s
+2026-06-24T13:54:53     [LOG] INSERT_BATCH_ITEM                             rows=   10000  batch= 1000     279 ms         35842 rows/s
+2026-06-24T13:54:53 
+2026-06-24T13:54:53   Run 9/10
+2026-06-24T13:55:03     [LOG] INSERT_BATCH_CUSTOMER                         rows=   10000  batch= 1000     105 ms         95238 rows/s
+2026-06-24T13:55:03     [LOG] INSERT_BATCH_PRODUCT                          rows=   10000  batch= 1000     115 ms         86957 rows/s
+2026-06-24T13:55:03     [LOG] INSERT_BATCH_INVOICE                          rows=   10000  batch= 1000     219 ms         45662 rows/s
+2026-06-24T13:55:03     [LOG] INSERT_BATCH_ITEM                             rows=   10000  batch= 1000     303 ms         33003 rows/s
+2026-06-24T13:55:03 
+2026-06-24T13:55:03   Run 10/10
+2026-06-24T13:55:13     [LOG] INSERT_BATCH_CUSTOMER                         rows=   10000  batch= 1000     151 ms         66225 rows/s
+2026-06-24T13:55:13     [LOG] INSERT_BATCH_PRODUCT                          rows=   10000  batch= 1000      98 ms        102041 rows/s
+2026-06-24T13:55:13     [LOG] INSERT_BATCH_INVOICE                          rows=   10000  batch= 1000     127 ms         78740 rows/s
+2026-06-24T13:55:13     [LOG] INSERT_BATCH_ITEM                             rows=   10000  batch= 1000     297 ms         33670 rows/s
+2026-06-24T13:55:13   ────────────────────────────────────────────────────────────────────────
+2026-06-24T13:55:13   Individual durations [ms]: 1065, 801, 906, 845, 1076, 734, 680, 659, 742, 673
+2026-06-24T13:55:13   avg = 818,1 ms  |  stddev = 146,5 ms  |  min = 659 ms  |  max = 1076 ms
+2026-06-24T13:55:13   ────────────────────────────────────────────────────────────────────────
+2026-06-24T13:55:13 
+2026-06-24T13:55:13 === SELECT WITH JOINS  (10 runs) ===
+2026-06-24T13:55:13 
+2026-06-24T13:55:13   Run 1/10
+2026-06-24T13:55:14     [LOG] SELECT_JOIN_CUSTOMER_INVOICE                  rows=   10000  batch=    0      33 ms        303030 rows/s
+2026-06-24T13:55:14     [LOG] SELECT_JOIN_INVOICE_ITEM_PRODUCT              rows=   10000  batch=    0      22 ms        454545 rows/s
+2026-06-24T13:55:14     [LOG] SELECT_JOIN_ALL_FOUR_TABLES                   rows=   10000  batch=    0      42 ms        238095 rows/s
+2026-06-24T13:55:14 
+2026-06-24T13:55:14   Run 2/10
+2026-06-24T13:55:14     [LOG] SELECT_JOIN_CUSTOMER_INVOICE                  rows=   10000  batch=    0      41 ms        243902 rows/s
+2026-06-24T13:55:14     [LOG] SELECT_JOIN_INVOICE_ITEM_PRODUCT              rows=   10000  batch=    0      27 ms        370370 rows/s
+2026-06-24T13:55:14     [LOG] SELECT_JOIN_ALL_FOUR_TABLES                   rows=   10000  batch=    0      42 ms        238095 rows/s
+2026-06-24T13:55:14 
+2026-06-24T13:55:14   Run 3/10
+2026-06-24T13:55:14     [LOG] SELECT_JOIN_CUSTOMER_INVOICE                  rows=   10000  batch=    0      28 ms        357143 rows/s
+2026-06-24T13:55:14     [LOG] SELECT_JOIN_INVOICE_ITEM_PRODUCT              rows=   10000  batch=    0      21 ms        476190 rows/s
+2026-06-24T13:55:14     [LOG] SELECT_JOIN_ALL_FOUR_TABLES                   rows=   10000  batch=    0      47 ms        212766 rows/s
+2026-06-24T13:55:14 
+2026-06-24T13:55:14   Run 4/10
+2026-06-24T13:55:14     [LOG] SELECT_JOIN_CUSTOMER_INVOICE                  rows=   10000  batch=    0      31 ms        322581 rows/s
+2026-06-24T13:55:14     [LOG] SELECT_JOIN_INVOICE_ITEM_PRODUCT              rows=   10000  batch=    0      21 ms        476190 rows/s
+2026-06-24T13:55:14     [LOG] SELECT_JOIN_ALL_FOUR_TABLES                   rows=   10000  batch=    0      46 ms        217391 rows/s
+2026-06-24T13:55:14 
+2026-06-24T13:55:14   Run 5/10
+2026-06-24T13:55:14     [LOG] SELECT_JOIN_CUSTOMER_INVOICE                  rows=   10000  batch=    0      44 ms        227273 rows/s
+2026-06-24T13:55:14     [LOG] SELECT_JOIN_INVOICE_ITEM_PRODUCT              rows=   10000  batch=    0      24 ms        416667 rows/s
+2026-06-24T13:55:14     [LOG] SELECT_JOIN_ALL_FOUR_TABLES                   rows=   10000  batch=    0      51 ms        196078 rows/s
+2026-06-24T13:55:14 
+2026-06-24T13:55:14   Run 6/10
+2026-06-24T13:55:14     [LOG] SELECT_JOIN_CUSTOMER_INVOICE                  rows=   10000  batch=    0      35 ms        285714 rows/s
+2026-06-24T13:55:14     [LOG] SELECT_JOIN_INVOICE_ITEM_PRODUCT              rows=   10000  batch=    0      34 ms        294118 rows/s
+2026-06-24T13:55:14     [LOG] SELECT_JOIN_ALL_FOUR_TABLES                   rows=   10000  batch=    0      40 ms        250000 rows/s
+2026-06-24T13:55:14 
+2026-06-24T13:55:14   Run 7/10
+2026-06-24T13:55:14     [LOG] SELECT_JOIN_CUSTOMER_INVOICE                  rows=   10000  batch=    0      39 ms        256410 rows/s
+2026-06-24T13:55:14     [LOG] SELECT_JOIN_INVOICE_ITEM_PRODUCT              rows=   10000  batch=    0      29 ms        344828 rows/s
+2026-06-24T13:55:14     [LOG] SELECT_JOIN_ALL_FOUR_TABLES                   rows=   10000  batch=    0      53 ms        188679 rows/s
+2026-06-24T13:55:14 
+2026-06-24T13:55:14   Run 8/10
+2026-06-24T13:55:14     [LOG] SELECT_JOIN_CUSTOMER_INVOICE                  rows=   10000  batch=    0      45 ms        222222 rows/s
+2026-06-24T13:55:14     [LOG] SELECT_JOIN_INVOICE_ITEM_PRODUCT              rows=   10000  batch=    0      20 ms        500000 rows/s
+2026-06-24T13:55:14     [LOG] SELECT_JOIN_ALL_FOUR_TABLES                   rows=   10000  batch=    0      43 ms        232558 rows/s
+2026-06-24T13:55:14 
+2026-06-24T13:55:14   Run 9/10
+2026-06-24T13:55:14     [LOG] SELECT_JOIN_CUSTOMER_INVOICE                  rows=   10000  batch=    0      30 ms        333333 rows/s
+2026-06-24T13:55:14     [LOG] SELECT_JOIN_INVOICE_ITEM_PRODUCT              rows=   10000  batch=    0      21 ms        476190 rows/s
+2026-06-24T13:55:14     [LOG] SELECT_JOIN_ALL_FOUR_TABLES                   rows=   10000  batch=    0      46 ms        217391 rows/s
+2026-06-24T13:55:14 
+2026-06-24T13:55:14   Run 10/10
+2026-06-24T13:55:15     [LOG] SELECT_JOIN_CUSTOMER_INVOICE                  rows=   10000  batch=    0      41 ms        243902 rows/s
+2026-06-24T13:55:15     [LOG] SELECT_JOIN_INVOICE_ITEM_PRODUCT              rows=   10000  batch=    0      36 ms        277778 rows/s
+2026-06-24T13:55:15     [LOG] SELECT_JOIN_ALL_FOUR_TABLES                   rows=   10000  batch=    0      60 ms        166667 rows/s
+2026-06-24T13:55:15   ────────────────────────────────────────────────────────────────────────
+2026-06-24T13:55:15   Individual durations [ms]: 97, 110, 96, 98, 119, 109, 121, 108, 97, 137
+2026-06-24T13:55:15   avg = 109,2 ms  |  stddev = 12,7 ms  |  min = 96 ms  |  max = 137 ms
+2026-06-24T13:55:15   ────────────────────────────────────────────────────────────────────────
+2026-06-24T13:55:15 
+2026-06-24T13:55:15 === SELECT denormalized  (10 runs) ===
+2026-06-24T13:55:15 
+2026-06-24T13:55:15   Run 1/10
+2026-06-24T13:55:15     [LOG] SELECT_DENORM_CUSTOMER_INVOICE                rows=   10000  batch=    0      22 ms        454545 rows/s
+2026-06-24T13:55:15     [LOG] SELECT_DENORM_INVOICE_ITEM_PRODUCT            rows=   10000  batch=    0       9 ms       1111111 rows/s
+2026-06-24T13:55:15     [LOG] SELECT_DENORM_ALL_COLUMNS                     rows=   10000  batch=    0      23 ms        434783 rows/s
+2026-06-24T13:55:15 
+2026-06-24T13:55:15   Run 2/10
+2026-06-24T13:55:15     [LOG] SELECT_DENORM_CUSTOMER_INVOICE                rows=   10000  batch=    0      37 ms        270270 rows/s
+2026-06-24T13:55:15     [LOG] SELECT_DENORM_INVOICE_ITEM_PRODUCT            rows=   10000  batch=    0       9 ms       1111111 rows/s
+2026-06-24T13:55:15     [LOG] SELECT_DENORM_ALL_COLUMNS                     rows=   10000  batch=    0      22 ms        454545 rows/s
+2026-06-24T13:55:15 
+2026-06-24T13:55:15   Run 3/10
+2026-06-24T13:55:15     [LOG] SELECT_DENORM_CUSTOMER_INVOICE                rows=   10000  batch=    0      23 ms        434783 rows/s
+2026-06-24T13:55:15     [LOG] SELECT_DENORM_INVOICE_ITEM_PRODUCT            rows=   10000  batch=    0      10 ms       1000000 rows/s
+2026-06-24T13:55:15     [LOG] SELECT_DENORM_ALL_COLUMNS                     rows=   10000  batch=    0      23 ms        434783 rows/s
+2026-06-24T13:55:15 
+2026-06-24T13:55:15   Run 4/10
+2026-06-24T13:55:15     [LOG] SELECT_DENORM_CUSTOMER_INVOICE                rows=   10000  batch=    0      25 ms        400000 rows/s
+2026-06-24T13:55:15     [LOG] SELECT_DENORM_INVOICE_ITEM_PRODUCT            rows=   10000  batch=    0       9 ms       1111111 rows/s
+2026-06-24T13:55:15     [LOG] SELECT_DENORM_ALL_COLUMNS                     rows=   10000  batch=    0      23 ms        434783 rows/s
+2026-06-24T13:55:15 
+2026-06-24T13:55:15   Run 5/10
+2026-06-24T13:55:15     [LOG] SELECT_DENORM_CUSTOMER_INVOICE                rows=   10000  batch=    0      24 ms        416667 rows/s
+2026-06-24T13:55:15     [LOG] SELECT_DENORM_INVOICE_ITEM_PRODUCT            rows=   10000  batch=    0      15 ms        666667 rows/s
+2026-06-24T13:55:15     [LOG] SELECT_DENORM_ALL_COLUMNS                     rows=   10000  batch=    0      25 ms        400000 rows/s
+2026-06-24T13:55:15 
+2026-06-24T13:55:15   Run 6/10
+2026-06-24T13:55:15     [LOG] SELECT_DENORM_CUSTOMER_INVOICE                rows=   10000  batch=    0      21 ms        476190 rows/s
+2026-06-24T13:55:15     [LOG] SELECT_DENORM_INVOICE_ITEM_PRODUCT            rows=   10000  batch=    0      15 ms        666667 rows/s
+2026-06-24T13:55:15     [LOG] SELECT_DENORM_ALL_COLUMNS                     rows=   10000  batch=    0      33 ms        303030 rows/s
+2026-06-24T13:55:15 
+2026-06-24T13:55:15   Run 7/10
+2026-06-24T13:55:15     [LOG] SELECT_DENORM_CUSTOMER_INVOICE                rows=   10000  batch=    0      23 ms        434783 rows/s
+2026-06-24T13:55:15     [LOG] SELECT_DENORM_INVOICE_ITEM_PRODUCT            rows=   10000  batch=    0      13 ms        769231 rows/s
+2026-06-24T13:55:15     [LOG] SELECT_DENORM_ALL_COLUMNS                     rows=   10000  batch=    0      23 ms        434783 rows/s
+2026-06-24T13:55:15 
+2026-06-24T13:55:15   Run 8/10
+2026-06-24T13:55:15     [LOG] SELECT_DENORM_CUSTOMER_INVOICE                rows=   10000  batch=    0      20 ms        500000 rows/s
+2026-06-24T13:55:15     [LOG] SELECT_DENORM_INVOICE_ITEM_PRODUCT            rows=   10000  batch=    0      10 ms       1000000 rows/s
+2026-06-24T13:55:15     [LOG] SELECT_DENORM_ALL_COLUMNS                     rows=   10000  batch=    0      23 ms        434783 rows/s
+2026-06-24T13:55:15 
+2026-06-24T13:55:15   Run 9/10
+2026-06-24T13:55:15     [LOG] SELECT_DENORM_CUSTOMER_INVOICE                rows=   10000  batch=    0      22 ms        454545 rows/s
+2026-06-24T13:55:15     [LOG] SELECT_DENORM_INVOICE_ITEM_PRODUCT            rows=   10000  batch=    0      15 ms        666667 rows/s
+2026-06-24T13:55:15     [LOG] SELECT_DENORM_ALL_COLUMNS                     rows=   10000  batch=    0      21 ms        476190 rows/s
+2026-06-24T13:55:15 
+2026-06-24T13:55:15   Run 10/10
+2026-06-24T13:55:15     [LOG] SELECT_DENORM_CUSTOMER_INVOICE                rows=   10000  batch=    0      22 ms        454545 rows/s
+2026-06-24T13:55:15     [LOG] SELECT_DENORM_INVOICE_ITEM_PRODUCT            rows=   10000  batch=    0      14 ms        714286 rows/s
+2026-06-24T13:55:15     [LOG] SELECT_DENORM_ALL_COLUMNS                     rows=   10000  batch=    0      22 ms        454545 rows/s
+2026-06-24T13:55:15   ────────────────────────────────────────────────────────────────────────
+2026-06-24T13:55:15   Individual durations [ms]: 54, 68, 56, 57, 64, 69, 59, 53, 58, 58
+2026-06-24T13:55:15   avg = 59,6 ms  |  stddev = 5,3 ms  |  min = 53 ms  |  max = 69 ms
+2026-06-24T13:55:15   ────────────────────────────────────────────────────────────────────────
+2026-06-24T13:55:15 === Run ended:   2026-06-24T13:55:15 ===
+2026-06-24T13:55:15 
