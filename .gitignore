@@ -4,3 +4,4 @@ data/
 target/
 log/*
 !log/lenovo_output.log
+!MacBook Apple M1 Pro_output_2026-06-24T13_28_36.log
