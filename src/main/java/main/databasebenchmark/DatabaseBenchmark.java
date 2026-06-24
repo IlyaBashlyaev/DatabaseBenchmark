@@ -22,7 +22,7 @@ public class DatabaseBenchmark {
     // Number of times each benchmark phase is repeated.
     // The guide recommends multiple runs to capture measurement variance
     // and enable standard-deviation analysis (Standardabweichung).
-    private static final int REPEAT_COUNT = 5;
+    private static final int REPEAT_COUNT = 10;
 
     private static final String CSV_FILE = "log/benchmark_results.csv";
     private static final String LOG_FILE = "log/output.log";
@@ -34,14 +34,16 @@ public class DatabaseBenchmark {
         Db hsqlDb = buildHsqlDb("./data/onlineshop");
         Db pgDb   = buildPostgresDb("localhost", "onlineshop", "postgres", "postgres");
 
-        try (Logger _ = new Logger(LOG_FILE);
+        String actualLogPath;
+        try (Logger logger = new Logger(LOG_FILE);
              CsvLogger csvLog = new CsvLogger(CSV_FILE)) {
+            actualLogPath = logger.getPath();
             runBenchmark(hsqlDb, csvLog);
             runBenchmark(pgDb,   csvLog);
         }
 
         System.out.println("Results written to " + CSV_FILE);
-        System.out.println("Output log written to " + LOG_FILE);
+        System.out.println("Output log written to " + actualLogPath);
     }
 
     private static void runBenchmark(Db db, CsvLogger log) {
@@ -57,8 +59,8 @@ public class DatabaseBenchmark {
         try {
             DataGenerator.createSchema(con, isHsqldb);
 
-            // Single INSERT
-            System.out.printf("%n=== Single INSERT  (%d runs, customers=%d, products=%d) ===%n",
+            // SINGLE INSERT
+            System.out.printf("%n=== SINGLE INSERT  (%d runs, customers=%d, products=%d) ===%n",
                     REPEAT_COUNT, CUSTOMER_COUNT, PRODUCT_COUNT);
 
             BenchmarkStats singleStats = new BenchmarkStats("INSERT_SINGLE");
@@ -72,8 +74,8 @@ public class DatabaseBenchmark {
             }
             printAndLogStats(singleStats, db, log);
 
-            // Batch INSERT
-            System.out.printf("%n=== Batch INSERT  (%d runs, batchSize=%d) ===%n",
+            // BATCH INSERT
+            System.out.printf("%n=== BATCH INSERT  (%d runs, batchSize=%d) ===%n",
                     REPEAT_COUNT, BATCH_SIZE);
 
             BenchmarkStats batchStats = new BenchmarkStats("INSERT_BATCH");
@@ -87,11 +89,11 @@ public class DatabaseBenchmark {
             }
             printAndLogStats(batchStats, db, log);
 
-            // ── SELECT with JOINs ──────────────────────────────────────────
+            // ── SELECT WITH JOINS ──────────────────────────────────────────
             // Data from the last batch-insert run is still present in the DB.
             // Running N SELECT rounds on the same dataset measures query
             // performance variance (caching effects, planner behaviour, etc.).
-            System.out.printf("%n=== SELECT with JOINs  (%d runs) ===%n", REPEAT_COUNT);
+            System.out.printf("%n=== SELECT WITH JOINS  (%d runs) ===%n", REPEAT_COUNT);
 
             BenchmarkStats selectStats = new BenchmarkStats("SELECT_ALL");
             for (int run = 1; run <= REPEAT_COUNT; run++) {
