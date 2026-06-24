@@ -118,12 +118,11 @@ public class DatabaseBenchmark {
             BenchmarkStats denormStats = new BenchmarkStats("SELECT_DENORM_ALL");
             for (int run = 1; run <= REPEAT_COUNT; run++) {
                 System.out.printf("%n  Run %d/%d%n", run, REPEAT_COUNT);
-                log.setRunNo(run);
                 long t1 = System.nanoTime();
                 DenormBenchmark.runAll(db, log);
                 denormStats.add((System.nanoTime() - t1) / 1_000_000);
             }
-            printAndLogStats(denormStats, db, log);
+            printAndLogStats(denormStats);
 
         } catch (SQLException e) {
             System.err.println("Benchmark failed [" + db.url + "]: " + e.getMessage());
