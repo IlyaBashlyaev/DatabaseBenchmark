@@ -7,8 +7,8 @@ import main.databasebenchmark.util.CsvLogger;
 
 public class InsertBenchmark {
 
-    private static final int INVOICES_PER_CUSTOMER = 3;
-    private static final int ITEMS_PER_INVOICE = 5;
+    private static final int INVOICES_PER_CUSTOMER = 1;
+    private static final int ITEMS_PER_INVOICE = 1;
 
     public static void runSingle(Db db, int customerCount, int productCount, CsvLogger log) {
         Connection con = db.getCon();

@@ -1,5 +1,6 @@
 package main.databasebenchmark;
 
+import java.io.File;
 import java.io.IOException;
 import java.sql.*;
 import java.util.stream.Collectors;
@@ -136,6 +137,14 @@ public class DatabaseBenchmark {
     }
 
     private static Db buildHsqlDb(String filePath) {
+        // A stale .lck file is left behind when the JVM is force-stopped or the
+        // data/ folder is removed from git while the DB was open. HSQLDB refuses
+        // to connect until it is gone.
+        File lockFile = new File(filePath + ".lck");
+        if (lockFile.exists() && lockFile.delete()) {
+            System.out.println("Removed stale HSQLDB lock file: " + lockFile.getPath());
+        }
+
         Db db = new Db();
         db.driver = "org.hsqldb.jdbc.JDBCDriver";
         db.url    = "jdbc:hsqldb:file:" + filePath;
