@@ -1,0 +1,437 @@
+Device name	LENOVO-422
+Full device name	LENOVO-422.ad.softlution.com
+Processor	12th Gen Intel(R) Core(TM) i7-12800HX (2.00 GHz)
+Installed RAM	32,0 GB (31,7 GB usable)
+Device ID	A90FB6EB-94D6-46AD-91E5-6ECD8DC0E121
+Product ID	00355-63273-01782-AAOEM
+System type	64-bit operating system, x64-based processor
+Pen and touch	No pen or touch input is available for this display
+
+
+=== Run started: 2026-06-24 08:16:41 ===
+
+ DB : jdbc:hsqldb:file:./data/onlineshop
+
+=== Single INSERT  (5 runs, customers=10000, products=10000) ===
+
+  Run 1/5
+    [LOG] INSERT_SINGLE_CUSTOMER                        rows=   10000  batch=    1     121 ms         82645 rows/s
+    [LOG] INSERT_SINGLE_PRODUCT                         rows=   10000  batch=    1     107 ms         93458 rows/s
+    [LOG] INSERT_SINGLE_INVOICE                         rows=   10000  batch=    1     145 ms         68966 rows/s
+    [LOG] INSERT_SINGLE_ITEM                            rows=   10000  batch=    1     114 ms         87719 rows/s
+
+  Run 2/5
+    [LOG] INSERT_SINGLE_CUSTOMER                        rows=   10000  batch=    1      43 ms        232558 rows/s
+    [LOG] INSERT_SINGLE_PRODUCT                         rows=   10000  batch=    1      29 ms        344828 rows/s
+    [LOG] INSERT_SINGLE_INVOICE                         rows=   10000  batch=    1      52 ms        192308 rows/s
+    [LOG] INSERT_SINGLE_ITEM                            rows=   10000  batch=    1      80 ms        125000 rows/s
+
+  Run 3/5
+    [LOG] INSERT_SINGLE_CUSTOMER                        rows=   10000  batch=    1      28 ms        357143 rows/s
+    [LOG] INSERT_SINGLE_PRODUCT                         rows=   10000  batch=    1      26 ms        384615 rows/s
+    [LOG] INSERT_SINGLE_INVOICE                         rows=   10000  batch=    1      79 ms        126582 rows/s
+    [LOG] INSERT_SINGLE_ITEM                            rows=   10000  batch=    1      77 ms        129870 rows/s
+
+  Run 4/5
+    [LOG] INSERT_SINGLE_CUSTOMER                        rows=   10000  batch=    1      26 ms        384615 rows/s
+    [LOG] INSERT_SINGLE_PRODUCT                         rows=   10000  batch=    1      25 ms        400000 rows/s
+    [LOG] INSERT_SINGLE_INVOICE                         rows=   10000  batch=    1      54 ms        185185 rows/s
+    [LOG] INSERT_SINGLE_ITEM                            rows=   10000  batch=    1     119 ms         84034 rows/s
+
+  Run 5/5
+    [LOG] INSERT_SINGLE_CUSTOMER                        rows=   10000  batch=    1      27 ms        370370 rows/s
+    [LOG] INSERT_SINGLE_PRODUCT                         rows=   10000  batch=    1      26 ms        384615 rows/s
+    [LOG] INSERT_SINGLE_INVOICE                         rows=   10000  batch=    1      51 ms        196078 rows/s
+    [LOG] INSERT_SINGLE_ITEM                            rows=   10000  batch=    1      80 ms        125000 rows/s
+  ────────────────────────────────────────────────────────────────────────
+  Individual durations [ms]: 534, 214, 215, 230, 189
+  avg = 276,4 ms  |  stddev = 129,5 ms  |  min = 189 ms  |  max = 534 ms
+  ────────────────────────────────────────────────────────────────────────
+
+=== Batch INSERT  (5 runs, batchSize=1000) ===
+
+  Run 1/5
+    [LOG] INSERT_BATCH_CUSTOMER                         rows=   10000  batch= 1000      29 ms        344828 rows/s
+    [LOG] INSERT_BATCH_PRODUCT                          rows=   10000  batch= 1000      26 ms        384615 rows/s
+    [LOG] INSERT_BATCH_INVOICE                          rows=   10000  batch= 1000      53 ms        188679 rows/s
+    [LOG] INSERT_BATCH_ITEM                             rows=   10000  batch= 1000      80 ms        125000 rows/s
+
+  Run 2/5
+    [LOG] INSERT_BATCH_CUSTOMER                         rows=   10000  batch= 1000      27 ms        370370 rows/s
+    [LOG] INSERT_BATCH_PRODUCT                          rows=   10000  batch= 1000      28 ms        357143 rows/s
+    [LOG] INSERT_BATCH_INVOICE                          rows=   10000  batch= 1000      49 ms        204082 rows/s
+    [LOG] INSERT_BATCH_ITEM                             rows=   10000  batch= 1000      76 ms        131579 rows/s
+
+  Run 3/5
+    [LOG] INSERT_BATCH_CUSTOMER                         rows=   10000  batch= 1000      24 ms        416667 rows/s
+    [LOG] INSERT_BATCH_PRODUCT                          rows=   10000  batch= 1000      24 ms        416667 rows/s
+    [LOG] INSERT_BATCH_INVOICE                          rows=   10000  batch= 1000      83 ms        120482 rows/s
+    [LOG] INSERT_BATCH_ITEM                             rows=   10000  batch= 1000      76 ms        131579 rows/s
+
+  Run 4/5
+    [LOG] INSERT_BATCH_CUSTOMER                         rows=   10000  batch= 1000      25 ms        400000 rows/s
+    [LOG] INSERT_BATCH_PRODUCT                          rows=   10000  batch= 1000      24 ms        416667 rows/s
+    [LOG] INSERT_BATCH_INVOICE                          rows=   10000  batch= 1000      53 ms        188679 rows/s
+    [LOG] INSERT_BATCH_ITEM                             rows=   10000  batch= 1000      74 ms        135135 rows/s
+
+  Run 5/5
+    [LOG] INSERT_BATCH_CUSTOMER                         rows=   10000  batch= 1000      63 ms        158730 rows/s
+    [LOG] INSERT_BATCH_PRODUCT                          rows=   10000  batch= 1000      23 ms        434783 rows/s
+    [LOG] INSERT_BATCH_INVOICE                          rows=   10000  batch= 1000      48 ms        208333 rows/s
+    [LOG] INSERT_BATCH_ITEM                             rows=   10000  batch= 1000      75 ms        133333 rows/s
+  ────────────────────────────────────────────────────────────────────────
+  Individual durations [ms]: 195, 185, 212, 181, 214
+  avg = 197,4 ms  |  stddev = 13,5 ms  |  min = 181 ms  |  max = 214 ms
+  ────────────────────────────────────────────────────────────────────────
+
+=== SELECT with JOINs  (5 runs) ===
+
+  Run 1/5
+    [LOG] SELECT_JOIN_CUSTOMER_INVOICE                  rows=   10000  batch=    0      36 ms        277778 rows/s
+    [LOG] SELECT_JOIN_INVOICE_ITEM_PRODUCT              rows=   10000  batch=    0      38 ms        263158 rows/s
+    [LOG] SELECT_JOIN_ALL_FOUR_TABLES                   rows=   10000  batch=    0      52 ms        192308 rows/s
+
+  Run 2/5
+    [LOG] SELECT_JOIN_CUSTOMER_INVOICE                  rows=   10000  batch=    0      25 ms        400000 rows/s
+    [LOG] SELECT_JOIN_INVOICE_ITEM_PRODUCT              rows=   10000  batch=    0      33 ms        303030 rows/s
+    [LOG] SELECT_JOIN_ALL_FOUR_TABLES                   rows=   10000  batch=    0      52 ms        192308 rows/s
+
+  Run 3/5
+    [LOG] SELECT_JOIN_CUSTOMER_INVOICE                  rows=   10000  batch=    0      22 ms        454545 rows/s
+    [LOG] SELECT_JOIN_INVOICE_ITEM_PRODUCT              rows=   10000  batch=    0      33 ms        303030 rows/s
+    [LOG] SELECT_JOIN_ALL_FOUR_TABLES                   rows=   10000  batch=    0      50 ms        200000 rows/s
+
+  Run 4/5
+    [LOG] SELECT_JOIN_CUSTOMER_INVOICE                  rows=   10000  batch=    0      19 ms        526316 rows/s
+    [LOG] SELECT_JOIN_INVOICE_ITEM_PRODUCT              rows=   10000  batch=    0      31 ms        322581 rows/s
+    [LOG] SELECT_JOIN_ALL_FOUR_TABLES                   rows=   10000  batch=    0      46 ms        217391 rows/s
+
+  Run 5/5
+    [LOG] SELECT_JOIN_CUSTOMER_INVOICE                  rows=   10000  batch=    0      19 ms        526316 rows/s
+    [LOG] SELECT_JOIN_INVOICE_ITEM_PRODUCT              rows=   10000  batch=    0      30 ms        333333 rows/s
+    [LOG] SELECT_JOIN_ALL_FOUR_TABLES                   rows=   10000  batch=    0      51 ms        196078 rows/s
+  ────────────────────────────────────────────────────────────────────────
+  Individual durations [ms]: 132, 131, 110, 101, 104
+  avg = 115,6 ms  |  stddev = 13,3 ms  |  min = 101 ms  |  max = 132 ms
+  ────────────────────────────────────────────────────────────────────────
+
+ DB : jdbc:postgresql://localhost/onlineshop
+
+=== Single INSERT  (5 runs, customers=10000, products=10000) ===
+
+  Run 1/5
+    [LOG] INSERT_SINGLE_CUSTOMER                        rows=   10000  batch=    1    4131 ms          2421 rows/s
+    [LOG] INSERT_SINGLE_PRODUCT                         rows=   10000  batch=    1    1746 ms          5727 rows/s
+    [LOG] INSERT_SINGLE_INVOICE                         rows=   10000  batch=    1    1958 ms          5107 rows/s
+    [LOG] INSERT_SINGLE_ITEM                            rows=   10000  batch=    1    2317 ms          4316 rows/s
+
+  Run 2/5
+    [LOG] INSERT_SINGLE_CUSTOMER                        rows=   10000  batch=    1    4184 ms          2390 rows/s
+    [LOG] INSERT_SINGLE_PRODUCT                         rows=   10000  batch=    1    1670 ms          5988 rows/s
+    [LOG] INSERT_SINGLE_INVOICE                         rows=   10000  batch=    1    2069 ms          4833 rows/s
+    [LOG] INSERT_SINGLE_ITEM                            rows=   10000  batch=    1    2213 ms          4519 rows/s
+
+  Run 3/5
+    [LOG] INSERT_SINGLE_CUSTOMER                        rows=   10000  batch=    1    3925 ms          2548 rows/s
+    [LOG] INSERT_SINGLE_PRODUCT                         rows=   10000  batch=    1    1728 ms          5787 rows/s
+    [LOG] INSERT_SINGLE_INVOICE                         rows=   10000  batch=    1    2652 ms          3771 rows/s
+    [LOG] INSERT_SINGLE_ITEM                            rows=   10000  batch=    1    2581 ms          3874 rows/s
+
+  Run 4/5
+    [LOG] INSERT_SINGLE_CUSTOMER                        rows=   10000  batch=    1    4025 ms          2484 rows/s
+    [LOG] INSERT_SINGLE_PRODUCT                         rows=   10000  batch=    1    3281 ms          3048 rows/s
+    [LOG] INSERT_SINGLE_INVOICE                         rows=   10000  batch=    1    2530 ms          3953 rows/s
+    [LOG] INSERT_SINGLE_ITEM                            rows=   10000  batch=    1    2021 ms          4948 rows/s
+
+  Run 5/5
+    [LOG] INSERT_SINGLE_CUSTOMER                        rows=   10000  batch=    1    3489 ms          2866 rows/s
+    [LOG] INSERT_SINGLE_PRODUCT                         rows=   10000  batch=    1    1786 ms          5599 rows/s
+    [LOG] INSERT_SINGLE_INVOICE                         rows=   10000  batch=    1    1914 ms          5225 rows/s
+    [LOG] INSERT_SINGLE_ITEM                            rows=   10000  batch=    1    1983 ms          5043 rows/s
+  ────────────────────────────────────────────────────────────────────────
+  Individual durations [ms]: 10162, 10141, 10890, 11861, 9176
+  avg = 10446,0 ms  |  stddev = 892,9 ms  |  min = 9176 ms  |  max = 11861 ms
+  ────────────────────────────────────────────────────────────────────────
+
+=== Batch INSERT  (5 runs, batchSize=1000) ===
+
+  Run 1/5
+    [LOG] INSERT_BATCH_CUSTOMER                         rows=   10000  batch= 1000     113 ms         88496 rows/s
+    [LOG] INSERT_BATCH_PRODUCT                          rows=   10000  batch= 1000     153 ms         65359 rows/s
+    [LOG] INSERT_BATCH_INVOICE                          rows=   10000  batch= 1000     134 ms         74627 rows/s
+    [LOG] INSERT_BATCH_ITEM                             rows=   10000  batch= 1000     398 ms         25126 rows/s
+
+  Run 2/5
+    [LOG] INSERT_BATCH_CUSTOMER                         rows=   10000  batch= 1000      97 ms        103093 rows/s
+    [LOG] INSERT_BATCH_PRODUCT                          rows=   10000  batch= 1000     110 ms         90909 rows/s
+    [LOG] INSERT_BATCH_INVOICE                          rows=   10000  batch= 1000     126 ms         79365 rows/s
+    [LOG] INSERT_BATCH_ITEM                             rows=   10000  batch= 1000     381 ms         26247 rows/s
+
+  Run 3/5
+    [LOG] INSERT_BATCH_CUSTOMER                         rows=   10000  batch= 1000      97 ms        103093 rows/s
+    [LOG] INSERT_BATCH_PRODUCT                          rows=   10000  batch= 1000     102 ms         98039 rows/s
+    [LOG] INSERT_BATCH_INVOICE                          rows=   10000  batch= 1000     187 ms         53476 rows/s
+    [LOG] INSERT_BATCH_ITEM                             rows=   10000  batch= 1000     499 ms         20040 rows/s
+
+
+  Run 4/5
+    [LOG] INSERT_BATCH_CUSTOMER                         rows=   10000  batch= 1000     139 ms         71942 rows/s
+    [LOG] INSERT_BATCH_PRODUCT                          rows=   10000  batch= 1000     133 ms         75188 rows/s
+    [LOG] INSERT_BATCH_INVOICE                          rows=   10000  batch= 1000     155 ms         64516 rows/s
+    [LOG] INSERT_BATCH_ITEM                             rows=   10000  batch= 1000     383 ms         26110 rows/s
+
+  Run 5/5
+    [LOG] INSERT_BATCH_CUSTOMER                         rows=   10000  batch= 1000      63 ms        158730 rows/s
+    [LOG] INSERT_BATCH_PRODUCT                          rows=   10000  batch= 1000     102 ms         98039 rows/s
+    [LOG] INSERT_BATCH_INVOICE                          rows=   10000  batch= 1000     153 ms         65359 rows/s
+    [LOG] INSERT_BATCH_ITEM                             rows=   10000  batch= 1000     448 ms         22321 rows/s
+  ────────────────────────────────────────────────────────────────────────
+  Individual durations [ms]: 802, 720, 889, 815, 770
+  avg = 799,2 ms  |  stddev = 55,6 ms  |  min = 720 ms  |  max = 889 ms
+  ────────────────────────────────────────────────────────────────────────
+
+=== SELECT with JOINs  (5 runs) ===
+
+  Run 1/5
+    [LOG] SELECT_JOIN_CUSTOMER_INVOICE                  rows=   10000  batch=    0      30 ms        333333 rows/s
+    [LOG] SELECT_JOIN_INVOICE_ITEM_PRODUCT              rows=   10000  batch=    0      46 ms        217391 rows/s
+    [LOG] SELECT_JOIN_ALL_FOUR_TABLES                   rows=   10000  batch=    0      73 ms        136986 rows/s
+
+  Run 2/5
+    [LOG] SELECT_JOIN_CUSTOMER_INVOICE                  rows=   10000  batch=    0      27 ms        370370 rows/s
+    [LOG] SELECT_JOIN_INVOICE_ITEM_PRODUCT              rows=   10000  batch=    0      34 ms        294118 rows/s
+    [LOG] SELECT_JOIN_ALL_FOUR_TABLES                   rows=   10000  batch=    0      86 ms        116279 rows/s
+
+  Run 3/5
+    [LOG] SELECT_JOIN_CUSTOMER_INVOICE                  rows=   10000  batch=    0      34 ms        294118 rows/s
+    [LOG] SELECT_JOIN_INVOICE_ITEM_PRODUCT              rows=   10000  batch=    0      37 ms        270270 rows/s
+    [LOG] SELECT_JOIN_ALL_FOUR_TABLES                   rows=   10000  batch=    0      72 ms        138889 rows/s
+
+  Run 4/5
+    [LOG] SELECT_JOIN_CUSTOMER_INVOICE                  rows=   10000  batch=    0      26 ms        384615 rows/s
+    [LOG] SELECT_JOIN_INVOICE_ITEM_PRODUCT              rows=   10000  batch=    0      45 ms        222222 rows/s
+    [LOG] SELECT_JOIN_ALL_FOUR_TABLES                   rows=   10000  batch=    0      72 ms        138889 rows/s
+
+  Run 5/5
+    [LOG] SELECT_JOIN_CUSTOMER_INVOICE                  rows=   10000  batch=    0      33 ms        303030 rows/s
+    [LOG] SELECT_JOIN_INVOICE_ITEM_PRODUCT              rows=   10000  batch=    0      39 ms        256410 rows/s
+    [LOG] SELECT_JOIN_ALL_FOUR_TABLES                   rows=   10000  batch=    0      70 ms        142857 rows/s
+  ────────────────────────────────────────────────────────────────────────
+  Individual durations [ms]: 151, 153, 145, 148, 146
+  avg = 148,6 ms  |  stddev = 3,0 ms  |  min = 145 ms  |  max = 153 ms
+  ────────────────────────────────────────────────────────────────────────
+=== Run ended:   2026-06-24 08:19:30 ===
+
+=== Run started: 2026-06-24 08:21:13 ===
+
+ DB : jdbc:hsqldb:file:./data/onlineshop
+
+=== Single INSERT  (5 runs, customers=10000, products=10000) ===
+
+  Run 1/5
+    [LOG] INSERT_SINGLE_CUSTOMER                        rows=   10000  batch=    1      64 ms        156250 rows/s
+    [LOG] INSERT_SINGLE_PRODUCT                         rows=   10000  batch=    1      71 ms        140845 rows/s
+    [LOG] INSERT_SINGLE_INVOICE                         rows=   10000  batch=    1      82 ms        121951 rows/s
+    [LOG] INSERT_SINGLE_ITEM                            rows=   10000  batch=    1      96 ms        104167 rows/s
+
+  Run 2/5
+    [LOG] INSERT_SINGLE_CUSTOMER                        rows=   10000  batch=    1      29 ms        344828 rows/s
+    [LOG] INSERT_SINGLE_PRODUCT                         rows=   10000  batch=    1      28 ms        357143 rows/s
+    [LOG] INSERT_SINGLE_INVOICE                         rows=   10000  batch=    1      52 ms        192308 rows/s
+    [LOG] INSERT_SINGLE_ITEM                            rows=   10000  batch=    1      79 ms        126582 rows/s
+
+  Run 3/5
+    [LOG] INSERT_SINGLE_CUSTOMER                        rows=   10000  batch=    1      27 ms        370370 rows/s
+    [LOG] INSERT_SINGLE_PRODUCT                         rows=   10000  batch=    1      26 ms        384615 rows/s
+    [LOG] INSERT_SINGLE_INVOICE                         rows=   10000  batch=    1      54 ms        185185 rows/s
+    [LOG] INSERT_SINGLE_ITEM                            rows=   10000  batch=    1     121 ms         82645 rows/s
+
+  Run 4/5
+    [LOG] INSERT_SINGLE_CUSTOMER                        rows=   10000  batch=    1      28 ms        357143 rows/s
+    [LOG] INSERT_SINGLE_PRODUCT                         rows=   10000  batch=    1      28 ms        357143 rows/s
+    [LOG] INSERT_SINGLE_INVOICE                         rows=   10000  batch=    1      52 ms        192308 rows/s
+    [LOG] INSERT_SINGLE_ITEM                            rows=   10000  batch=    1      79 ms        126582 rows/s
+
+  Run 5/5
+    [LOG] INSERT_SINGLE_CUSTOMER                        rows=   10000  batch=    1      27 ms        370370 rows/s
+    [LOG] INSERT_SINGLE_PRODUCT                         rows=   10000  batch=    1      27 ms        370370 rows/s
+    [LOG] INSERT_SINGLE_INVOICE                         rows=   10000  batch=    1      87 ms        114943 rows/s
+    [LOG] INSERT_SINGLE_ITEM                            rows=   10000  batch=    1      80 ms        125000 rows/s
+  ────────────────────────────────────────────────────────────────────────
+  Individual durations [ms]: 327, 196, 233, 192, 225
+  avg = 234,6 ms  |  stddev = 48,9 ms  |  min = 192 ms  |  max = 327 ms
+  ────────────────────────────────────────────────────────────────────────
+
+=== Batch INSERT  (5 runs, batchSize=1000) ===
+
+  Run 1/5
+    [LOG] INSERT_BATCH_CUSTOMER                         rows=   10000  batch= 1000      29 ms        344828 rows/s
+    [LOG] INSERT_BATCH_PRODUCT                          rows=   10000  batch= 1000      29 ms        344828 rows/s
+    [LOG] INSERT_BATCH_INVOICE                          rows=   10000  batch= 1000      51 ms        196078 rows/s
+    [LOG] INSERT_BATCH_ITEM                             rows=   10000  batch= 1000      79 ms        126582 rows/s
+
+  Run 2/5
+    [LOG] INSERT_BATCH_CUSTOMER                         rows=   10000  batch= 1000      27 ms        370370 rows/s
+    [LOG] INSERT_BATCH_PRODUCT                          rows=   10000  batch= 1000      62 ms        161290 rows/s
+    [LOG] INSERT_BATCH_INVOICE                          rows=   10000  batch= 1000      51 ms        196078 rows/s
+    [LOG] INSERT_BATCH_ITEM                             rows=   10000  batch= 1000      80 ms        125000 rows/s
+
+  Run 3/5
+    [LOG] INSERT_BATCH_CUSTOMER                         rows=   10000  batch= 1000      25 ms        400000 rows/s
+    [LOG] INSERT_BATCH_PRODUCT                          rows=   10000  batch= 1000      26 ms        384615 rows/s
+    [LOG] INSERT_BATCH_INVOICE                          rows=   10000  batch= 1000      49 ms        204082 rows/s
+    [LOG] INSERT_BATCH_ITEM                             rows=   10000  batch= 1000      77 ms        129870 rows/s
+
+  Run 4/5
+    [LOG] INSERT_BATCH_CUSTOMER                         rows=   10000  batch= 1000      28 ms        357143 rows/s
+    [LOG] INSERT_BATCH_PRODUCT                          rows=   10000  batch= 1000      24 ms        416667 rows/s
+    [LOG] INSERT_BATCH_INVOICE                          rows=   10000  batch= 1000      49 ms        204082 rows/s
+    [LOG] INSERT_BATCH_ITEM                             rows=   10000  batch= 1000      76 ms        131579 rows/s
+
+  Run 5/5
+    [LOG] INSERT_BATCH_CUSTOMER                         rows=   10000  batch= 1000      27 ms        370370 rows/s
+    [LOG] INSERT_BATCH_PRODUCT                          rows=   10000  batch= 1000      27 ms        370370 rows/s
+    [LOG] INSERT_BATCH_INVOICE                          rows=   10000  batch= 1000      49 ms        204082 rows/s
+    [LOG] INSERT_BATCH_ITEM                             rows=   10000  batch= 1000      77 ms        129870 rows/s
+  ────────────────────────────────────────────────────────────────────────
+  Individual durations [ms]: 192, 225, 183, 181, 184
+  avg = 193,0 ms  |  stddev = 16,4 ms  |  min = 181 ms  |  max = 225 ms
+  ────────────────────────────────────────────────────────────────────────
+
+=== SELECT with JOINs  (5 runs) ===
+
+  Run 1/5
+    [LOG] SELECT_JOIN_CUSTOMER_INVOICE                  rows=   10000  batch=    0      35 ms        285714 rows/s
+    [LOG] SELECT_JOIN_INVOICE_ITEM_PRODUCT              rows=   10000  batch=    0      37 ms        270270 rows/s
+    [LOG] SELECT_JOIN_ALL_FOUR_TABLES                   rows=   10000  batch=    0      53 ms        188679 rows/s
+
+  Run 2/5
+    [LOG] SELECT_JOIN_CUSTOMER_INVOICE                  rows=   10000  batch=    0      24 ms        416667 rows/s
+    [LOG] SELECT_JOIN_INVOICE_ITEM_PRODUCT              rows=   10000  batch=    0      30 ms        333333 rows/s
+    [LOG] SELECT_JOIN_ALL_FOUR_TABLES                   rows=   10000  batch=    0      50 ms        200000 rows/s
+
+  Run 3/5
+    [LOG] SELECT_JOIN_CUSTOMER_INVOICE                  rows=   10000  batch=    0      20 ms        500000 rows/s
+    [LOG] SELECT_JOIN_INVOICE_ITEM_PRODUCT              rows=   10000  batch=    0      31 ms        322581 rows/s
+    [LOG] SELECT_JOIN_ALL_FOUR_TABLES                   rows=   10000  batch=    0      50 ms        200000 rows/s
+
+  Run 4/5
+    [LOG] SELECT_JOIN_CUSTOMER_INVOICE                  rows=   10000  batch=    0      22 ms        454545 rows/s
+    [LOG] SELECT_JOIN_INVOICE_ITEM_PRODUCT              rows=   10000  batch=    0      32 ms        312500 rows/s
+    [LOG] SELECT_JOIN_ALL_FOUR_TABLES                   rows=   10000  batch=    0      47 ms        212766 rows/s
+
+  Run 5/5
+    [LOG] SELECT_JOIN_CUSTOMER_INVOICE                  rows=   10000  batch=    0      18 ms        555556 rows/s
+    [LOG] SELECT_JOIN_INVOICE_ITEM_PRODUCT              rows=   10000  batch=    0      30 ms        333333 rows/s
+    [LOG] SELECT_JOIN_ALL_FOUR_TABLES                   rows=   10000  batch=    0      47 ms        212766 rows/s
+  ────────────────────────────────────────────────────────────────────────
+  Individual durations [ms]: 130, 107, 106, 105, 100
+  avg = 109,6 ms  |  stddev = 10,5 ms  |  min = 100 ms  |  max = 130 ms
+  ────────────────────────────────────────────────────────────────────────
+
+ DB : jdbc:postgresql://localhost/onlineshop
+
+=== Single INSERT  (5 runs, customers=10000, products=10000) ===
+
+  Run 1/5
+    [LOG] INSERT_SINGLE_CUSTOMER                        rows=   10000  batch=    1    3951 ms          2531 rows/s
+    [LOG] INSERT_SINGLE_PRODUCT                         rows=   10000  batch=    1    1705 ms          5865 rows/s
+    [LOG] INSERT_SINGLE_INVOICE                         rows=   10000  batch=    1    1953 ms          5120 rows/s
+    [LOG] INSERT_SINGLE_ITEM                            rows=   10000  batch=    1    2233 ms          4478 rows/s
+
+  Run 2/5
+    [LOG] INSERT_SINGLE_CUSTOMER                        rows=   10000  batch=    1    4129 ms          2422 rows/s
+    [LOG] INSERT_SINGLE_PRODUCT                         rows=   10000  batch=    1    1764 ms          5669 rows/s
+    [LOG] INSERT_SINGLE_INVOICE                         rows=   10000  batch=    1    2286 ms          4374 rows/s
+    [LOG] INSERT_SINGLE_ITEM                            rows=   10000  batch=    1    2256 ms          4433 rows/s
+
+  Run 3/5
+    [LOG] INSERT_SINGLE_CUSTOMER                        rows=   10000  batch=    1    4144 ms          2413 rows/s
+    [LOG] INSERT_SINGLE_PRODUCT                         rows=   10000  batch=    1    1578 ms          6337 rows/s
+    [LOG] INSERT_SINGLE_INVOICE                         rows=   10000  batch=    1    2034 ms          4916 rows/s
+    [LOG] INSERT_SINGLE_ITEM                            rows=   10000  batch=    1    2242 ms          4460 rows/s
+
+  Run 4/5
+    [LOG] INSERT_SINGLE_CUSTOMER                        rows=   10000  batch=    1    4007 ms          2496 rows/s
+    [LOG] INSERT_SINGLE_PRODUCT                         rows=   10000  batch=    1    1748 ms          5721 rows/s
+    [LOG] INSERT_SINGLE_INVOICE                         rows=   10000  batch=    1    1965 ms          5089 rows/s
+    [LOG] INSERT_SINGLE_ITEM                            rows=   10000  batch=    1    2187 ms          4572 rows/s
+
+  Run 5/5
+    [LOG] INSERT_SINGLE_CUSTOMER                        rows=   10000  batch=    1    3760 ms          2660 rows/s
+    [LOG] INSERT_SINGLE_PRODUCT                         rows=   10000  batch=    1    2026 ms          4936 rows/s
+    [LOG] INSERT_SINGLE_INVOICE                         rows=   10000  batch=    1    2044 ms          4892 rows/s
+    [LOG] INSERT_SINGLE_ITEM                            rows=   10000  batch=    1    2164 ms          4621 rows/s
+  ────────────────────────────────────────────────────────────────────────
+  Individual durations [ms]: 9850, 10440, 10003, 9911, 9998
+  avg = 10040,4 ms  |  stddev = 207,8 ms  |  min = 9850 ms  |  max = 10440 ms
+  ────────────────────────────────────────────────────────────────────────
+
+=== Batch INSERT  (5 runs, batchSize=1000) ===
+
+  Run 1/5
+    [LOG] INSERT_BATCH_CUSTOMER                         rows=   10000  batch= 1000     130 ms         76923 rows/s
+    [LOG] INSERT_BATCH_PRODUCT                          rows=   10000  batch= 1000     120 ms         83333 rows/s
+    [LOG] INSERT_BATCH_INVOICE                          rows=   10000  batch= 1000     214 ms         46729 rows/s
+    [LOG] INSERT_BATCH_ITEM                             rows=   10000  batch= 1000     305 ms         32787 rows/s
+
+  Run 2/5
+    [LOG] INSERT_BATCH_CUSTOMER                         rows=   10000  batch= 1000      96 ms        104167 rows/s
+    [LOG] INSERT_BATCH_PRODUCT                          rows=   10000  batch= 1000     105 ms         95238 rows/s
+    [LOG] INSERT_BATCH_INVOICE                          rows=   10000  batch= 1000     114 ms         87719 rows/s
+    [LOG] INSERT_BATCH_ITEM                             rows=   10000  batch= 1000     312 ms         32051 rows/s
+
+  Run 3/5
+    [LOG] INSERT_BATCH_CUSTOMER                         rows=   10000  batch= 1000     101 ms         99010 rows/s
+    [LOG] INSERT_BATCH_PRODUCT                          rows=   10000  batch= 1000     104 ms         96154 rows/s
+    [LOG] INSERT_BATCH_INVOICE                          rows=   10000  batch= 1000     152 ms         65789 rows/s
+    [LOG] INSERT_BATCH_ITEM                             rows=   10000  batch= 1000     276 ms         36232 rows/s
+
+  Run 4/5
+    [LOG] INSERT_BATCH_CUSTOMER                         rows=   10000  batch= 1000      84 ms        119048 rows/s
+    [LOG] INSERT_BATCH_PRODUCT                          rows=   10000  batch= 1000      94 ms        106383 rows/s
+    [LOG] INSERT_BATCH_INVOICE                          rows=   10000  batch= 1000     186 ms         53763 rows/s
+    [LOG] INSERT_BATCH_ITEM                             rows=   10000  batch= 1000     323 ms         30960 rows/s
+
+  Run 5/5
+    [LOG] INSERT_BATCH_CUSTOMER                         rows=   10000  batch= 1000     126 ms         79365 rows/s
+    [LOG] INSERT_BATCH_PRODUCT                          rows=   10000  batch= 1000      94 ms        106383 rows/s
+    [LOG] INSERT_BATCH_INVOICE                          rows=   10000  batch= 1000     167 ms         59880 rows/s
+    [LOG] INSERT_BATCH_ITEM                             rows=   10000  batch= 1000     271 ms         36900 rows/s
+  ────────────────────────────────────────────────────────────────────────
+  Individual durations [ms]: 774, 631, 638, 691, 662
+  avg = 679,2 ms  |  stddev = 51,9 ms  |  min = 631 ms  |  max = 774 ms
+  ────────────────────────────────────────────────────────────────────────
+
+=== SELECT with JOINs  (5 runs) ===
+
+  Run 1/5
+    [LOG] SELECT_JOIN_CUSTOMER_INVOICE                  rows=   10000  batch=    0      19 ms        526316 rows/s
+    [LOG] SELECT_JOIN_INVOICE_ITEM_PRODUCT              rows=   10000  batch=    0      44 ms        227273 rows/s
+    [LOG] SELECT_JOIN_ALL_FOUR_TABLES                   rows=   10000  batch=    0      87 ms        114943 rows/s
+
+  Run 2/5
+    [LOG] SELECT_JOIN_CUSTOMER_INVOICE                  rows=   10000  batch=    0      31 ms        322581 rows/s
+    [LOG] SELECT_JOIN_INVOICE_ITEM_PRODUCT              rows=   10000  batch=    0      46 ms        217391 rows/s
+    [LOG] SELECT_JOIN_ALL_FOUR_TABLES                   rows=   10000  batch=    0      72 ms        138889 rows/s
+
+  Run 3/5
+    [LOG] SELECT_JOIN_CUSTOMER_INVOICE                  rows=   10000  batch=    0      26 ms        384615 rows/s
+    [LOG] SELECT_JOIN_INVOICE_ITEM_PRODUCT              rows=   10000  batch=    0      45 ms        222222 rows/s
+    [LOG] SELECT_JOIN_ALL_FOUR_TABLES                   rows=   10000  batch=    0      77 ms        129870 rows/s
+
+  Run 4/5
+    [LOG] SELECT_JOIN_CUSTOMER_INVOICE                  rows=   10000  batch=    0      25 ms        400000 rows/s
+    [LOG] SELECT_JOIN_INVOICE_ITEM_PRODUCT              rows=   10000  batch=    0      51 ms        196078 rows/s
+    [LOG] SELECT_JOIN_ALL_FOUR_TABLES                   rows=   10000  batch=    0      91 ms        109890 rows/s
+
+  Run 5/5
+    [LOG] SELECT_JOIN_CUSTOMER_INVOICE                  rows=   10000  batch=    0      43 ms        232558 rows/s
+    [LOG] SELECT_JOIN_INVOICE_ITEM_PRODUCT              rows=   10000  batch=    0      51 ms        196078 rows/s
+    [LOG] SELECT_JOIN_ALL_FOUR_TABLES                   rows=   10000  batch=    0      78 ms        128205 rows/s
+  ────────────────────────────────────────────────────────────────────────
+  Individual durations [ms]: 154, 156, 152, 171, 175
+  avg = 161,6 ms  |  stddev = 9,5 ms  |  min = 152 ms  |  max = 175 ms
+  ────────────────────────────────────────────────────────────────────────
+=== Run ended:   2026-06-24 08:23:16 ===
+
