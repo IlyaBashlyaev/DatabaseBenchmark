@@ -1,3 +1,5 @@
+<!-- TODO: Update README.md and translate it in English -->
+
 # DB Benchmark
 
 ## Definition
