@@ -67,6 +67,12 @@ public class DataGenerator {
                 "FOREIGN KEY (INVOICEID) REFERENCES INVOICE(ID) ON DELETE CASCADE, " +
                 "FOREIGN KEY (PRODUCTID) REFERENCES PRODUCT(ID) ON DELETE CASCADE)"
             );
+            s.execute(
+                "CREATE " + t + "TABLE IF NOT EXISTS FLAT_SALES (" +
+                "CUSTOMERID INTEGER, FIRSTNAME VARCHAR(20), LASTNAME VARCHAR(20), " +
+                "CITY VARCHAR(20), INVOICEID INTEGER, INVOICE_TOTAL DECIMAL(10,2), " +
+                "PRODUCT_NAME VARCHAR(20), QUANTITY INTEGER, COST DECIMAL(10,2))"
+            );
         }
     }
 
@@ -74,6 +80,7 @@ public class DataGenerator {
         boolean prev = con.getAutoCommit();
         con.setAutoCommit(false);
         try (Statement s = con.createStatement()) {
+            s.execute("DELETE FROM FLAT_SALES");
             s.execute("DELETE FROM ITEM");
             s.execute("DELETE FROM INVOICE");
             s.execute("DELETE FROM PRODUCT");
