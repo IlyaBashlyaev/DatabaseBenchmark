@@ -31,31 +31,37 @@ public class DenormBenchmark {
         }
     }
 
-    public static void runAll(Db db, CsvLogger log) {
+    /** @return total pure database time in milliseconds (sum of the per-query values logged) */
+    public static long runAll(Db db, CsvLogger log) {
         Connection con = db.getCon();
-        if (con == null) return;
+        if (con == null) return 0L;
+
+        long durationMs = 0L;
 
         // Q1: customers with invoice count and total spent
-        run(con, db, log, "SELECT_DENORM_CUSTOMER_INVOICE",
+        durationMs += run(con, db, log, "SELECT_DENORM_CUSTOMER_INVOICE",
             "SELECT CUSTOMERID, FIRSTNAME, LASTNAME, " +
             "COUNT(INVOICEID) AS invoice_count, SUM(INVOICE_TOTAL) AS total_spent " +
             "FROM FLAT_SALES " +
             "GROUP BY CUSTOMERID, FIRSTNAME, LASTNAME");
 
         // Q2: invoice lines with product names
-        run(con, db, log, "SELECT_DENORM_INVOICE_ITEM_PRODUCT",
+        durationMs += run(con, db, log, "SELECT_DENORM_INVOICE_ITEM_PRODUCT",
             "SELECT INVOICEID, PRODUCT_NAME, QUANTITY, COST, " +
             "(QUANTITY * COST) AS line_total " +
             "FROM FLAT_SALES");
 
         // Q3: all columns with sort
-        run(con, db, log, "SELECT_DENORM_ALL_COLUMNS",
+        durationMs += run(con, db, log, "SELECT_DENORM_ALL_COLUMNS",
             "SELECT LASTNAME, CITY, PRODUCT_NAME, QUANTITY, COST " +
             "FROM FLAT_SALES " +
             "ORDER BY LASTNAME");
+
+        return durationMs;
     }
 
-    private static void run(Connection con, Db db, CsvLogger log,
+    /** @return pure database time in milliseconds (executeQuery + result iteration), matching the logged value */
+    private static long run(Connection con, Db db, CsvLogger log,
                              String operation, String sql) {
         try (PreparedStatement ps = con.prepareStatement(sql)) {
             long t1 = System.nanoTime();
@@ -63,9 +69,13 @@ public class DenormBenchmark {
             try (ResultSet rs = ps.executeQuery()) {
                 while (rs.next()) rows++;
             }
-            log.log(db.driver, db.url, t1, System.nanoTime(), operation, rows, 0);
+            long t2 = System.nanoTime();
+            long dbNanos = t2 - t1;
+            log.log(db.driver, db.url, t1, t2, dbNanos, operation, rows, 0);
+            return dbNanos / 1_000_000;
         } catch (SQLException e) {
             System.err.println("Denorm select error [" + operation + "]: " + e.getMessage());
+            return 0L;
         }
     }
 }

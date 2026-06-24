@@ -72,9 +72,7 @@ public class DatabaseBenchmark {
             for (int run = 1; run <= REPEAT_COUNT; run++) {
                 System.out.printf("%n  Run %d/%d%n", run, REPEAT_COUNT);
                 DataGenerator.deleteAll(con);
-                long t1 = System.nanoTime();
-                InsertBenchmark.runSingle(db, CUSTOMER_COUNT, PRODUCT_COUNT, log);
-                singleStats.add((System.nanoTime() - t1) / 1_000_000);
+                singleStats.add(InsertBenchmark.runSingle(db, CUSTOMER_COUNT, PRODUCT_COUNT, log));
             }
             printAndLogStats(singleStats);
 
@@ -86,9 +84,7 @@ public class DatabaseBenchmark {
             for (int run = 1; run <= REPEAT_COUNT; run++) {
                 System.out.printf("%n  Run %d/%d%n", run, REPEAT_COUNT);
                 DataGenerator.deleteAll(con);
-                long t1 = System.nanoTime();
-                InsertBenchmark.runBatch(db, CUSTOMER_COUNT, PRODUCT_COUNT, BATCH_SIZE, log);
-                batchStats.add((System.nanoTime() - t1) / 1_000_000);
+                batchStats.add(InsertBenchmark.runBatch(db, CUSTOMER_COUNT, PRODUCT_COUNT, BATCH_SIZE, log));
             }
             printAndLogStats(batchStats);
 
@@ -101,9 +97,7 @@ public class DatabaseBenchmark {
             BenchmarkStats selectStats = new BenchmarkStats("SELECT_ALL");
             for (int run = 1; run <= REPEAT_COUNT; run++) {
                 System.out.printf("%n  Run %d/%d%n", run, REPEAT_COUNT);
-                long t1 = System.nanoTime();
-                SelectBenchmark.runAll(db, log);
-                selectStats.add((System.nanoTime() - t1) / 1_000_000);
+                selectStats.add(SelectBenchmark.runAll(db, log));
             }
             printAndLogStats(selectStats);
 
@@ -118,9 +112,7 @@ public class DatabaseBenchmark {
             BenchmarkStats denormStats = new BenchmarkStats("SELECT_DENORM_ALL");
             for (int run = 1; run <= REPEAT_COUNT; run++) {
                 System.out.printf("%n  Run %d/%d%n", run, REPEAT_COUNT);
-                long t1 = System.nanoTime();
-                DenormBenchmark.runAll(db, log);
-                denormStats.add((System.nanoTime() - t1) / 1_000_000);
+                denormStats.add(DenormBenchmark.runAll(db, log));
             }
             printAndLogStats(denormStats);
 

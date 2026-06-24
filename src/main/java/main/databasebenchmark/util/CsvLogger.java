@@ -39,11 +39,18 @@ public class CsvLogger implements AutoCloseable {
         }
     }
 
-    /** Write one row for a single sub-operation execution. */
-    public void log(String driver, String url, long t1, long t2,
+    /**
+     * Write one row for a single sub-operation execution.
+     *
+     * @param t1      wall-clock nano start of the operation (context column)
+     * @param t2      wall-clock nano end of the operation (context column)
+     * @param dbNanos pure database time accumulated around execute* calls only;
+     *                drives the reported Duration and RowsPerSecond
+     */
+    public void log(String driver, String url, long t1, long t2, long dbNanos,
                     String operation, int rowCount, int batchSize) {
         try {
-            long   durationMs = (t2 - t1) / 1_000_000;
+            long   durationMs = dbNanos / 1_000_000;
             double rowsPerSec = durationMs > 0 ? (rowCount * 1000.0 / durationMs) : 0.0;
 
             String line = String.format("%s,%s,%s,%s,%d,%d,%s,%s,%d,%d,%d,%s,%d,%d,%d,%.0f",
