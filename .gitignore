@@ -1,5 +1,6 @@
 .DS_Store
 .idea/
 data/
-log/
 target/
+log/*
+!log/lenovo_output.log
