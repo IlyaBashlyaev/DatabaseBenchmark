@@ -11,6 +11,7 @@ import main.databasebenchmark.dao.Db;
 import main.databasebenchmark.util.BenchmarkStats;
 import main.databasebenchmark.util.CsvLogger;
 import main.databasebenchmark.util.Logger;
+import main.databasebenchmark.util.SystemInfo;
 
 public class DatabaseBenchmark {
 
@@ -34,9 +35,12 @@ public class DatabaseBenchmark {
         Db hsqlDb = buildHsqlDb("./data/onlineshop");
         Db pgDb   = buildPostgresDb("localhost", "onlineshop", "postgres", "postgres");
 
+        System.out.println("Collecting system information...");
+        SystemInfo sysInfo = SystemInfo.collect();
+
         String actualLogPath;
         try (Logger logger = new Logger(LOG_FILE);
-             CsvLogger csvLog = new CsvLogger(CSV_FILE)) {
+             CsvLogger csvLog = new CsvLogger(CSV_FILE, sysInfo)) {
             actualLogPath = logger.getPath();
             runBenchmark(hsqlDb, csvLog);
             runBenchmark(pgDb,   csvLog);
@@ -67,12 +71,11 @@ public class DatabaseBenchmark {
             for (int run = 1; run <= REPEAT_COUNT; run++) {
                 System.out.printf("%n  Run %d/%d%n", run, REPEAT_COUNT);
                 DataGenerator.deleteAll(con);
-                log.setRunNo(run);
                 long t1 = System.nanoTime();
                 InsertBenchmark.runSingle(db, CUSTOMER_COUNT, PRODUCT_COUNT, log);
                 singleStats.add((System.nanoTime() - t1) / 1_000_000);
             }
-            printAndLogStats(singleStats, db, log);
+            printAndLogStats(singleStats);
 
             // BATCH INSERT
             System.out.printf("%n=== BATCH INSERT  (%d runs, batchSize=%d) ===%n",
@@ -82,12 +85,11 @@ public class DatabaseBenchmark {
             for (int run = 1; run <= REPEAT_COUNT; run++) {
                 System.out.printf("%n  Run %d/%d%n", run, REPEAT_COUNT);
                 DataGenerator.deleteAll(con);
-                log.setRunNo(run);
                 long t1 = System.nanoTime();
                 InsertBenchmark.runBatch(db, CUSTOMER_COUNT, PRODUCT_COUNT, BATCH_SIZE, log);
                 batchStats.add((System.nanoTime() - t1) / 1_000_000);
             }
-            printAndLogStats(batchStats, db, log);
+            printAndLogStats(batchStats);
 
             // ── SELECT WITH JOINS ──────────────────────────────────────────
             // Data from the last batch-insert run is still present in the DB.
@@ -98,12 +100,11 @@ public class DatabaseBenchmark {
             BenchmarkStats selectStats = new BenchmarkStats("SELECT_ALL");
             for (int run = 1; run <= REPEAT_COUNT; run++) {
                 System.out.printf("%n  Run %d/%d%n", run, REPEAT_COUNT);
-                log.setRunNo(run);
                 long t1 = System.nanoTime();
                 SelectBenchmark.runAll(db, log);
                 selectStats.add((System.nanoTime() - t1) / 1_000_000);
             }
-            printAndLogStats(selectStats, db, log);
+            printAndLogStats(selectStats);
 
         } catch (SQLException e) {
             System.err.println("Benchmark failed [" + db.url + "]: " + e.getMessage());
@@ -122,7 +123,7 @@ public class DatabaseBenchmark {
      *   ── Individual durations [ms]: 4823, 4751, 4812, 4798, 4841
      *   ── avg = 4805.0 ms  |  stddev = 30.3 ms  |  min = 4751 ms  |  max = 4841 ms
      */
-    private static void printAndLogStats(BenchmarkStats stats, Db db, CsvLogger log) {
+    private static void printAndLogStats(BenchmarkStats stats) {
         String samples = stats.getSamples().stream()
                 .map(Object::toString)
                 .collect(Collectors.joining(", "));
@@ -134,8 +135,6 @@ public class DatabaseBenchmark {
                 stats.getAvgMs(), stats.getStdDevMs(),
                 stats.getMinMs(), stats.getMaxMs());
         System.out.println(DIVIDER);
-
-        log.logStats(db.driver, db.url, stats);
     }
 
     private static Db buildHsqlDb(String filePath) {
