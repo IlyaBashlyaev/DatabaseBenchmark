@@ -22,7 +22,7 @@ public class DatabaseBenchmark {
     // Number of times each benchmark phase is repeated.
     // The guide recommends multiple runs to capture measurement variance
     // and enable standard-deviation analysis (Standardabweichung).
-    private static final int REPEAT_COUNT = 5;
+    private static final int REPEAT_COUNT = 10;
 
     private static final String CSV_FILE = "log/benchmark_results.csv";
     private static final String LOG_FILE = "log/output.log";
