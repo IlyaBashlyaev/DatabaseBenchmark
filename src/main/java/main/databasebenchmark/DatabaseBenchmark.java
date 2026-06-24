@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.sql.*;
 import java.util.stream.Collectors;
 import main.databasebenchmark.benchmark.DataGenerator;
+import main.databasebenchmark.benchmark.DenormBenchmark;
 import main.databasebenchmark.benchmark.InsertBenchmark;
 import main.databasebenchmark.benchmark.SelectBenchmark;
 import main.databasebenchmark.dao.Db;
@@ -22,7 +23,7 @@ public class DatabaseBenchmark {
     // Number of times each benchmark phase is repeated.
     // The guide recommends multiple runs to capture measurement variance
     // and enable standard-deviation analysis (Standardabweichung).
-    private static final int REPEAT_COUNT = 5;
+    private static final int REPEAT_COUNT = 10;
 
     private static final String CSV_FILE = "log/benchmark_results.csv";
     private static final String LOG_FILE = "log/output.log";
@@ -102,6 +103,24 @@ public class DatabaseBenchmark {
                 selectStats.add((System.nanoTime() - t1) / 1_000_000);
             }
             printAndLogStats(selectStats, db, log);
+
+            // ── SELECT on denormalized table ───────────────────────────────
+            // Build FLAT_SALES once from the normalized data (same rows the
+            // JOIN phase queried). The build is not timed; only the SELECT
+            // rounds are, so the comparison is JOIN-read vs flat-read.
+            DenormBenchmark.populate(db);
+
+            System.out.printf("%n=== SELECT denormalized  (%d runs) ===%n", REPEAT_COUNT);
+
+            BenchmarkStats denormStats = new BenchmarkStats("SELECT_DENORM_ALL");
+            for (int run = 1; run <= REPEAT_COUNT; run++) {
+                System.out.printf("%n  Run %d/%d%n", run, REPEAT_COUNT);
+                log.setRunNo(run);
+                long t1 = System.nanoTime();
+                DenormBenchmark.runAll(db, log);
+                denormStats.add((System.nanoTime() - t1) / 1_000_000);
+            }
+            printAndLogStats(denormStats, db, log);
 
         } catch (SQLException e) {
             System.err.println("Benchmark failed [" + db.url + "]: " + e.getMessage());
