@@ -53,8 +53,9 @@ CREATE DATABASE onlineshop;
 5. Make sure the PostgreSQL bin directory is added to your `PATH`
    (the installer offers this option automatically).
 
-#### macOS
+#### Unix (macOS / Linux)
 
+##### macOS
 1. Install PostgreSQL via [Homebrew](https://brew.sh):
 ```
 brew install postgresql@17
@@ -63,6 +64,19 @@ brew install postgresql@17
 ```
 brew services start postgresql@17
 ```
+
+##### Linux
+1. Install PostgreSQL via apt:
+```
+sudo apt update
+sudo apt install postgresql postgresql-contrib
+```
+2. Switch to PostgreSQL system user:
+```
+sudo -u postgres psql
+```
+
+##### Unix
 3. Open the PostgreSQL shell:
 ```
 psql postgres
