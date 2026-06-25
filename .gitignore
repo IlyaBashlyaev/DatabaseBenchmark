@@ -2,5 +2,6 @@
 .idea/
 data/
 target/
+docs/scenarios
 log/*
 !log/hardware/
