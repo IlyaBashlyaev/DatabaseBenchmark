@@ -11,6 +11,7 @@ classDiagram
         -int REPEAT_COUNT$
         -String CSV_FILE$
         -String LOG_FILE$
+        -String DIVIDER$
         +main(String[] args)$
         -runBenchmark(Db db, CsvLogger log)$
         -buildHsqlDb(String filePath)$ Db
@@ -52,6 +53,7 @@ classDiagram
         -SystemInfo sys
         +CsvLogger(String filename, SystemInfo sys)
         +log(String driver, String url, long t1, long t2, long dbNanos, String operation, int rowCount, int batchSize)
+        -dbmsName(String driver)$ String
         +close()
     }
 
@@ -67,13 +69,40 @@ classDiagram
         +close()
     }
 
+    class TimestampedOutputStream {
+        <<inner>>
+        -OutputStream delegate
+        -boolean atLineStart
+        +TimestampedOutputStream(OutputStream delegate)
+        +write(int b)
+        +write(byte[] buf, int off, int len)
+        +flush()
+        +close()
+        -writeTimestamp()
+    }
+
+    class TeeStream {
+        <<inner>>
+        -PrintStream second
+        +TeeStream(PrintStream main, PrintStream second)
+        +write(byte[] buf, int off, int len)
+        +write(int b)
+        +flush()
+    }
+
     class SystemInfo {
         +String os
         +String cpu
         +int cores
         +long clockSpeedMhz
         +long ramMb
+        -SystemInfo(String os, String cpu, int cores, long clockSpeedMhz, long ramMb)
         +collect()$ SystemInfo
+        -detectCpu()$ String
+        -detectClockSpeedMhz()$ long
+        -detectRamMb()$ long
+        -exec(String[] cmd)$ String
+        -sanitize(String value)$ String
     }
 
     class BenchmarkStats {
@@ -149,6 +178,9 @@ classDiagram
     AutoCloseable <|.. Db
     AutoCloseable <|.. CsvLogger
     AutoCloseable <|.. Logger
+
+    Logger +-- TimestampedOutputStream
+    Logger +-- TeeStream
 
     DatabaseBenchmark ..> Db : creates
     DatabaseBenchmark ..> CsvLogger : creates
