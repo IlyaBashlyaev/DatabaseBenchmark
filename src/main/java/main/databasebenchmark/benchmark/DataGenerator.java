@@ -42,8 +42,22 @@ public class DataGenerator {
         "Pen", "Bag", "Book", "Box", "Fan", "Rack", "Stand", "Pad"
     };
 
+    public static void dropSchema(Connection con) throws SQLException {
+        try (Statement s = con.createStatement()) {
+            s.execute("DROP TABLE IF EXISTS FLAT_SALES");
+            s.execute("DROP TABLE IF EXISTS ITEM");
+            s.execute("DROP TABLE IF EXISTS INVOICE");
+            s.execute("DROP TABLE IF EXISTS PRODUCT");
+            s.execute("DROP TABLE IF EXISTS CUSTOMER");
+        }
+    }
+
     public static void createSchema(Connection con, boolean isHsqldb) throws SQLException {
-        String t = isHsqldb ? "CACHED " : "";
+        createSchema(con, isHsqldb, false);
+    }
+
+    public static void createSchema(Connection con, boolean isHsqldb, boolean isUnlogged) throws SQLException {
+        String t = isHsqldb ? "CACHED " : (isUnlogged ? "UNLOGGED " : "");
         try (Statement s = con.createStatement()) {
             s.execute(
                 "CREATE " + t + "TABLE IF NOT EXISTS CUSTOMER (" +

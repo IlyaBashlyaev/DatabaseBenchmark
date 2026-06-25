@@ -32,10 +32,26 @@ public class DatabaseBenchmark {
     private static final String DIVIDER =
             "  " + "─".repeat(72);
 
-    public static void main(String[] args) throws IOException {
-        Db hsqlDb = buildHsqlDb("./data/onlineshop");
-        Db pgDb   = buildPostgresDb("localhost", "onlineshop", "postgres", "postgres");
+    public enum BenchmarkMode {
+        HSQLDB_OPTIMAL("HSQLDB (Optimal - Delayed Write)", true, false, false),
+        HSQLDB_EQUALIZED("HSQLDB (Equalized - Sync Write)", true, true, false),
+        POSTGRESQL_OPTIMAL("PostgreSQL (Optimal - Sync Write)", false, false, false),
+        POSTGRESQL_EQUALIZED("PostgreSQL (Equalized - Async & In-Memory)", false, false, true);
 
+        public final String name;
+        public final boolean isHsqldb;
+        public final boolean isHsqlSync;
+        public final boolean isPgAsyncUnlogged;
+
+        BenchmarkMode(String name, boolean isHsqldb, boolean isHsqlSync, boolean isPgAsyncUnlogged) {
+            this.name = name;
+            this.isHsqldb = isHsqldb;
+            this.isHsqlSync = isHsqlSync;
+            this.isPgAsyncUnlogged = isPgAsyncUnlogged;
+        }
+    }
+
+    public static void main(String[] args) throws IOException {
         System.out.println("Collecting system information...");
         SystemInfo sysInfo = SystemInfo.collect();
 
@@ -43,26 +59,63 @@ public class DatabaseBenchmark {
         try (Logger logger = new Logger(LOG_FILE);
              CsvLogger csvLog = new CsvLogger(CSV_FILE, sysInfo)) {
             actualLogPath = logger.getPath();
-            runBenchmark(hsqlDb, csvLog);
-            runBenchmark(pgDb,   csvLog);
+
+            for (BenchmarkMode mode : BenchmarkMode.values()) {
+                runBenchmark(mode, csvLog);
+            }
         }
 
         System.out.println("Results written to " + CSV_FILE);
         System.out.println("Output log written to " + actualLogPath);
     }
 
-    private static void runBenchmark(Db db, CsvLogger log) {
+    private static void runBenchmark(BenchmarkMode mode, CsvLogger log) {
+        Db db;
+        if (mode.isHsqldb) {
+            db = buildHsqlDb("./data/onlineshop");
+            db.url += ";shutdown=true";
+            if (mode.isHsqlSync) {
+                db.url += ";hsqldb.write_delay=false";
+            }
+        } else {
+            db = buildPostgresDb("localhost", "onlineshop", "postgres", "postgres");
+            if (mode.isPgAsyncUnlogged) {
+                db.url += "?options=-c%20synchronous_commit=off";
+            }
+        }
+
         Connection con = db.getCon();
         if (con == null) {
-            System.out.println("\nSkipping " + db.url + " (not available)\n");
+            System.out.println("\nSkipping scenario: " + mode.name + " (database connection not available)\n");
             return;
         }
 
-        System.out.println("\n DB : " + db.url);
-        boolean isHsqldb = db.url.contains("hsqldb");
+        System.out.println("\n DB Scenario: " + mode.name);
+        System.out.println(" URL: " + db.url);
 
         try {
-            DataGenerator.createSchema(con, isHsqldb);
+            // Explicitly set write delay for HSQLDB to ensure settings take effect even if the DB was already loaded in memory
+            if (mode.isHsqldb) {
+                try (Statement s = con.createStatement()) {
+                    if (mode.isHsqlSync) {
+                        s.execute("SET FILES WRITE DELAY FALSE");
+                    } else {
+                        s.execute("SET FILES WRITE DELAY TRUE");
+                    }
+                }
+            }
+
+            // Drop schema first to ensure clean state and correct table persistence properties
+            DataGenerator.dropSchema(con);
+
+            // Create schema with mode-specific table persistence (e.g. UNLOGGED for PG equalized)
+            DataGenerator.createSchema(con, mode.isHsqldb, mode.isPgAsyncUnlogged);
+
+            if (!mode.isHsqldb && mode.isPgAsyncUnlogged) {
+                try (Statement s = con.createStatement()) {
+                    s.execute("SET synchronous_commit = off");
+                }
+            }
 
             // SINGLE INSERT
             System.out.printf("%n=== SINGLE INSERT  (%d runs, customers=%d, products=%d) ===%n",
