@@ -1,3 +1,9 @@
+MacBook Pro A2141 (2019)
+- CPU: 2,6 GHz 6-Core Intel Core i7
+- GPU: Intel UHD Graphics 630 1536 MB
+- RAM: 16 GB 2667 MHz DDR4
+- macOS: 15.5
+
 2026-06-26T07:51:12 === Run started: 2026-06-26T07:51:12 ===
 2026-06-26T07:51:13 
 2026-06-26T07:51:13  DB Scenario: HSQLDB (Optimal - Delayed Write)
