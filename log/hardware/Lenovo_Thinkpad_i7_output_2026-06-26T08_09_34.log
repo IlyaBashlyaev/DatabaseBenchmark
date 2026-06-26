@@ -1,3 +1,10 @@
+Device name	LENOVO-422
+Full device name	LENOVO-422.ad.softlution.com
+Processor	12th Gen Intel(R) Core(TM) i7-12800HX (2.00 GHz)
+Installed RAM	32,0 GB (31,7 GB usable)
+System type	64-bit operating system, x64-based processor
+Pen and touch	No pen or touch input is available for this display
+
 2026-06-26T08:09:34 === Run started: 2026-06-26T08:09:34 ===
 2026-06-26T08:09:34 
 2026-06-26T08:09:34  DB Scenario: HSQLDB (Optimal - Delayed Write)
