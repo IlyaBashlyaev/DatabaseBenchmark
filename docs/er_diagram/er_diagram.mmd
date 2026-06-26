@@ -1,6 +1,3 @@
-# DatabaseBenchmark - ER-Diagram
-
-```mermaid
 erDiagram
     CUSTOMER {
         int ID PK
@@ -47,4 +44,3 @@ erDiagram
     PRODUCT ||--o{ ITEM : "wird enthalten"
     CUSTOMER ||--o{ FLAT_SALES : "denormalisiert in"
     INVOICE ||--o{ FLAT_SALES : "denormalisiert in"
-```

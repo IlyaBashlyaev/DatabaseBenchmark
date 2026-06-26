@@ -1,0 +1,53 @@
+@startuml
+
+skinparam linetype ortho
+skinparam nodesep 80
+skinparam ranksep 80
+skinparam padding 10
+skinparam ArrowThickness 1.5
+
+class DatabaseBenchmark {
+    +{static} main(String[] args) : void
+    -{static} runBenchmark(BenchmarkMode mode, CsvLogger log) : void
+}
+
+enum BenchmarkMode {
+    HSQLDB_OPTIMAL
+    HSQLDB_EQUALIZED
+    POSTGRESQL_OPTIMAL
+    POSTGRESQL_EQUALIZED
+}
+
+class Db {
+    +String driver
+    +String url
+    +getCon() : Connection
+    +close() : void
+}
+
+class InsertBenchmark {
+    +{static} runSingle(Db db, int customers, int products, CsvLogger log) : long
+    +{static} runBatch(Db db, int customers, int products, int batchSize, CsvLogger log) : long
+}
+
+class SelectBenchmark {
+    +{static} runAll(Db db, CsvLogger log) : long
+}
+
+class DenormBenchmark {
+    +{static} populate(Db db) : void
+    +{static} runAll(Db db, CsvLogger log) : long
+}
+
+DatabaseBenchmark *-- BenchmarkMode
+
+DatabaseBenchmark ..> Db : creates
+DatabaseBenchmark ..> InsertBenchmark : uses
+DatabaseBenchmark ..> SelectBenchmark : uses
+DatabaseBenchmark ..> DenormBenchmark : uses
+
+InsertBenchmark ..> Db : uses
+SelectBenchmark ..> Db : uses
+DenormBenchmark ..> Db : uses
+
+@enduml
