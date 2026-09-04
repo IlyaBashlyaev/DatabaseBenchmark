@@ -35,13 +35,27 @@ classDiagram
         +runAll(Db db, CsvLogger log)$ long
     }
 
+    class CsvLogger {
+        -String HEADER$
+        -BufferedWriter writer
+        -SystemInfo sys
+        +CsvLogger(String filename, SystemInfo sys)
+        +log(String driver, String url, long t1, long t2, long dbNanos, String operation, int rowCount, int batchSize): void
+        -dbmsName(String driver)$ String
+        +close()
+    }
+
     DatabaseBenchmark *-- BenchmarkMode
 
-    DatabaseBenchmark ..> Db : creates
-    DatabaseBenchmark ..> InsertBenchmark : uses
-    DatabaseBenchmark ..> SelectBenchmark : uses
-    DatabaseBenchmark ..> DenormBenchmark : uses
+    DatabaseBenchmark ..> Db
+    DatabaseBenchmark ..> InsertBenchmark
+    DatabaseBenchmark ..> SelectBenchmark
+    DatabaseBenchmark ..> DenormBenchmark
 
-    InsertBenchmark ..> Db : uses
-    SelectBenchmark ..> Db : uses
-    DenormBenchmark ..> Db : uses
+    InsertBenchmark ..> Db
+    SelectBenchmark ..> Db
+    DenormBenchmark ..> Db
+
+    InsertBenchmark ..> CsvLogger
+    SelectBenchmark ..> CsvLogger
+    DenormBenchmark ..> CsvLogger
