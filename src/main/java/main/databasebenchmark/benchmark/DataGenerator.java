@@ -108,13 +108,14 @@ public class DataGenerator {
     public static String firstName()    { return FIRST_NAMES[RNG.nextInt(FIRST_NAMES.length)]; }
     public static String lastName()     { return LAST_NAMES[RNG.nextInt(LAST_NAMES.length)]; }
     public static String city()         { return CITIES[RNG.nextInt(CITIES.length)]; }
-    public static String productName()  { return PRODUCT_ADJ[RNG.nextInt(PRODUCT_ADJ.length)] + " " + PRODUCT_NOUNS[RNG.nextInt(PRODUCT_NOUNS.length)]; }
-
-    public static String street() {
-        return (RNG.nextInt(999) + 1) + " " + STREET_NAMES[RNG.nextInt(STREET_NAMES.length)];
+    public static String productName()  {
+        return PRODUCT_ADJ[RNG.nextInt(PRODUCT_ADJ.length)]
+                + " "
+                + PRODUCT_NOUNS[RNG.nextInt(PRODUCT_NOUNS.length)];
     }
-
-    public static double price()    { return Math.round((1.0  + RNG.nextDouble() * 99.0) * 100.0) / 100.0; }
-    public static double cost()     { return Math.round((0.5  + RNG.nextDouble() * 50.0) * 100.0) / 100.0; }
-    public static int    quantity() { return RNG.nextInt(20) + 1; }
+    public static String street()       { return (RNG.nextInt(999) + 1)
+                                            + " " + STREET_NAMES[RNG.nextInt(STREET_NAMES.length)]; }
+    public static double price()        { return Math.round((1.0  + RNG.nextDouble() * 99.0) * 100.0) / 100.0; }
+    public static double cost()         { return Math.round((0.5  + RNG.nextDouble() * 50.0) * 100.0) / 100.0; }
+    public static int    quantity()     { return RNG.nextInt(20) + 1; }
 }

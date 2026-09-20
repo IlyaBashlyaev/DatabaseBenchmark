@@ -5,12 +5,9 @@ skinparam nodesep 80
 skinparam ranksep 80
 skinparam padding 10
 skinparam ArrowThickness 1.5
+skinparam classAttributeIconSize 0
 
-class DatabaseBenchmark {
-    +{static} main(String[] args) : void
-    -{static} runBenchmark(BenchmarkMode mode, CsvLogger log) : void
-}
-
+class DatabaseBenchmark
 enum BenchmarkMode {
     HSQLDB_OPTIMAL
     HSQLDB_EQUALIZED
@@ -18,36 +15,45 @@ enum BenchmarkMode {
     POSTGRESQL_EQUALIZED
 }
 
-class Db {
-    +String driver
-    +String url
-    +getCon() : Connection
-    +close() : void
+package benchmark {
+    class DataGenerator
+    class InsertBenchmark
+    class SelectBenchmark
+    class DenormBenchmark
 }
 
-class InsertBenchmark {
-    +{static} runSingle(Db db, int customers, int products, CsvLogger log) : long
-    +{static} runBatch(Db db, int customers, int products, int batchSize, CsvLogger log) : long
+package dao {
+    class Db
+    class Customer
+    class Product
 }
 
-class SelectBenchmark {
-    +{static} runAll(Db db, CsvLogger log) : long
-}
-
-class DenormBenchmark {
-    +{static} populate(Db db) : void
-    +{static} runAll(Db db, CsvLogger log) : long
+package util {
+    class BenchmarkStats
+    class CsvLogger
+    class Logger
+    class SystemInfo
 }
 
 DatabaseBenchmark *-- BenchmarkMode
 
-DatabaseBenchmark ..> Db : creates
-DatabaseBenchmark ..> InsertBenchmark : uses
-DatabaseBenchmark ..> SelectBenchmark : uses
-DatabaseBenchmark ..> DenormBenchmark : uses
+DatabaseBenchmark ..> DataGenerator
+DatabaseBenchmark ..> InsertBenchmark
+DatabaseBenchmark ..> SelectBenchmark
+DatabaseBenchmark ..> DenormBenchmark
+DatabaseBenchmark ..> Db
+DatabaseBenchmark ..> BenchmarkStats
+DatabaseBenchmark ..> CsvLogger
+DatabaseBenchmark ..> Logger
 
-InsertBenchmark ..> Db : uses
-SelectBenchmark ..> Db : uses
-DenormBenchmark ..> Db : uses
+InsertBenchmark ..> Db
+SelectBenchmark ..> Db
+DenormBenchmark ..> Db
+
+InsertBenchmark ..> CsvLogger
+SelectBenchmark ..> CsvLogger
+DenormBenchmark ..> CsvLogger
+
+CsvLogger ..> SystemInfo
 
 @enduml
