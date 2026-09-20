@@ -31,20 +31,18 @@ erDiagram
     }
 
     FLAT_SALES {
-        int CUSTOMERID
-        varchar FIRSTNAME
-        varchar LASTNAME
-        varchar CITY
-        int INVOICEID
-        decimal INVOICE_TOTAL
-        varchar PRODUCT_NAME
-        int QUANTITY
-        decimal COST
+        int CUSTOMERID "aus CUSTOMER"
+        varchar FIRSTNAME "aus CUSTOMER"
+        varchar LASTNAME "aus CUSTOMER"
+        varchar CITY "aus CUSTOMER"
+        int INVOICEID "aus INVOICE"
+        decimal INVOICE_TOTAL "aus INVOICE"
+        varchar PRODUCT_NAME "aus PRODUCT"
+        int QUANTITY "aus ITEM"
+        decimal COST "aus ITEM"
     }
 
-    CUSTOMER ||--o{ INVOICE : "stellt aus"
-    INVOICE ||--o{ ITEM : enthaelt
-    PRODUCT ||--o{ ITEM : "wird enthalten"
-    CUSTOMER ||--o{ FLAT_SALES : "denormalisiert in"
-    INVOICE ||--o{ FLAT_SALES : "denormalisiert in"
+    CUSTOMER ||--o{ INVOICE : "erhaelt"
+    INVOICE ||--o{ ITEM : "enthaelt"
+    PRODUCT ||--o{ ITEM : "wird bestellt in"
 ```

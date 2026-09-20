@@ -243,7 +243,8 @@ public class InsertBenchmark {
      * Executes the accumulated batch and commits, timing only these two database
      * calls. Returns the pure database time in nanoseconds.
      */
-    private static long flush(Connection con, PreparedStatement ps) throws SQLException {
+    private static long flush(Connection con, PreparedStatement ps)
+                        throws SQLException {
         long s = System.nanoTime();
         ps.executeBatch();
         con.commit();
